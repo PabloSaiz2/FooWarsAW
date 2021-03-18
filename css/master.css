@@ -1,0 +1,30 @@
+#main-header img{
+   width: 15%;
+   height: auto;
+}
+.header-element{
+    display: inline;
+    vertical-align:middle;
+    margin-left: 1%;
+}
+.header-element a{
+    margin-left: 1%;
+}
+#user{
+    display: inline;
+}
+.input-div{
+    display: block;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
+.input-div label{
+    display: block;
+}
+#user img{
+    border-radius: 50%;
+    width: 5%;
+    height: auto;
+}
