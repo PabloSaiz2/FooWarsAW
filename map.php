@@ -18,6 +18,9 @@
       ?>
       <section>
             <canvas id = "mapEditor" width=1200 height=1865></canvas>
+            <a id = "download"download="Mapa.png">
+            <button onClick="downloadCanvas()">Guardar</button>
+            </a>
       </section>
   </body>
 </html>
