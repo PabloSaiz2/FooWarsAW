@@ -17,7 +17,7 @@
         include_once('header.php');
       ?>
       <section>
-            <canvas id = "mapEditor" width=1000 height=562></canvas>
+            <canvas id = "mapEditor" width=1200 height=1865></canvas>
       </section>
   </body>
 </html>
