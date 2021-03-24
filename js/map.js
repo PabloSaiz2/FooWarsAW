@@ -8,7 +8,7 @@ class Pair{
     }
 }
 class State{
-    painted = false;
+    color = "#6a6a6a";
     points = null;
     name = null;
     xCenter=0;
@@ -47,6 +47,7 @@ function initializeMap(map){
 }
 class Map{
     states = new Array();
+    color = "#6a6a6a";
     paint(x,y){
         //Todavía no hace una búsqueda binaria, pero la hará
         var found = false;
@@ -59,7 +60,7 @@ class Map{
             while(!found&&j<this.states[i].points.length){
                 if(this.states[i].points[j].first==x&&this.states[i].points[j].second==y){
                     found = true;
-                    this.states[i].painted = true;
+                    this.states[i].color = this.color;
                     
                 }
                 ++j;
@@ -68,20 +69,20 @@ class Map{
         }
     }
 }
+var map = new Map();
 function downloadCanvas() {
     var canvas = document.getElementById("mapEditor");
     var img = canvas.toDataURL();
     document.getElementById("download").setAttribute("href",img);
 }
+
 function updateCanvas(map) {
     var canvas = document.getElementById("mapEditor");
     var context = canvas.getContext("2d");
     context.clearRect(0,0,canvas.width,canvas.height);
     map.states.forEach(state => {
-        context.fillStyle = "#6a6a6a";
-        if(state.painted){
-            context.fillStyle = "#11670b"
-        }
+        
+        context.fillStyle = state.color;
         state.points.forEach(point => {       
             context.fillRect(point.first,point.second,1,1);
         });
@@ -101,6 +102,10 @@ function initializeListeners(map) {
         map.paint(x,y);
         updateCanvas(map);
     });
+    var colorPicker = document.getElementById("color");
+    colorPicker.addEventListener('change',(event)=>{
+        map.color = event.target.value;
+    });
     /*
     canvas.addEventListener("contextmenu",function(evt){
         evt.preventDefault();
@@ -111,7 +116,6 @@ function initializeListeners(map) {
         updateCanvas();
     });*/
 }
-var map = new Map();
 document.addEventListener("DOMContentLoaded",function(){
     initializeMap(map);
     initializeListeners(map);
