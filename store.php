@@ -20,7 +20,7 @@
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
-  <!-- Full-width images with number and caption text -->
+  <!-- Full-width images with number -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 5</div>
     <img src="img/store/photo1.jpg" style="width:100%">
@@ -46,28 +46,16 @@
     <img src="img/store/photo5.jpg" style="width:100%">
   </div>
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 <br>
-
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-</div>
-
 <script>
   showSlides(slideIndex);
 </script>
+
 <!-- grid -->
 
 <h2>PRODUCTOS:</h2>
-<div id="myBtnContainer">
+<div class="btnContainer" id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Todos</button>
   <button class="btn" onclick="filterSelection('ropa')"> Ropa</button>
   <button class="btn" onclick="filterSelection('gorras')"> Gorras</button>
