@@ -7,57 +7,125 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type = "text/css" href="css/master.css">
-    <title>Baguettes of Iron</title>
+	<link rel="stylesheet" type = "text/css" href="css/estilo_tienda.css">
+	<script type = "text/javascript" src="js/store/slider.js"></script>
+    <title>Baguettes of Iron - Tienda</title>
   </head>
   
   <body>
       <?php
         include_once('header.php');
       ?>
-      <section>
- <div class="wrapper">
-    <div class="slider" id="slider">      
-        <ul class="slides">       
-            <li class="slide" id="slide1">
-                <a href="#">
-                    <img src="img/photo1.jpg" alt="photo 1">      
-                </a>
-            </li>
-            <li class="slide" id="slide2">
-                <a href="#">
-                    <img src="img/photo2.jpg" alt="photo 2">      
-                </a>
-            </li>
-            <li class="slide" id="slide3">
-                <a href="#">
-                    <img src="img/photo3.jpg" alt="photo 3">      
-                </a>
-            </li>
-            <li class="slide" id="slide4">
-                <a href="#">
-                    <img src="img/photo4.jpg" alt="photo 4">      
-                </a>
-            </li>     
-            <li class="slide" id="slide5">
-                <a href="#">
-                    <img src="img/photo5.jpg" alt="photo 5">      
-                </a>
-            </li>             
-            <li class="slide">
-                <a href="#">
-                    <img src="img/photo1.jpg" alt="photo 1">      
-                </a>
-            </li>     
-        </ul>
-        <ul class="slider-controler">         
-            <li><a href="#slide1">&bullet;</a></li>
-            <li><a href="#slide2">&bullet;</a></li>
-            <li><a href="#slide3">&bullet;</a></li>
-            <li><a href="#slide4">&bullet;</a></li>
-            <li><a href="#slide5">&bullet;</a></li>
-        </ul>
-    </div>
+	  
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 5</div>
+    <img src="img/store/photo1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 5</div>
+    <img src="img/store/photo2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 5</div>
+    <img src="img/store/photo3.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="img/store/photo4.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="img/store/photo5.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-      </section>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<script>
+  showSlides(slideIndex);
+</script>
+<!-- grid -->
+
+<h2>PRODUCTOS:</h2>
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Todos</button>
+  <button class="btn" onclick="filterSelection('ropa')"> Ropa</button>
+  <button class="btn" onclick="filterSelection('gorras')"> Gorras</button>
+  <button class="btn" onclick="filterSelection('otros')"> Otros</button>
+</div>
+	<script type = "text/javascript" src="js/store/products.js"></script>
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column ropa">
+    <div class="content">
+      <img src="img/store/camiseta.png" alt="Camiseta" style="width:100%">
+      <h4>Camiseta BI</h4>
+      <p>Camiseta clasica con nuestro logo.</p>
+    </div>
+  </div>
+  <div class="column ropa">
+    <div class="content">
+      <img src="img/store/pantalon.png" alt="Pantalon" style="width:100%">
+      <h4>Pantalon BI</h4>
+      <p>Pantalon vaquero con nuestro logo.</p>
+    </div>
+  </div>
+  <div class="column ropa">
+    <div class="content">
+      <img src="img/store/chaqueta.png" alt="Chaqueta" style="width:100%">
+      <h4>Chaqueta BI</h4>
+      <p>Chaqueta verde con nuestro logo.</p>
+    </div>
+  </div>
+
+  <div class="column gorras">
+    <div class="content">
+      <img src="img/store/gorra1.png" alt="Gorra" style="width:100%">
+      <h4>Gorra negra</h4>
+      <p>Gorra negra con nuestro logo.</p>
+    </div>
+  </div>
+  <div class="column gorras">
+    <div class="content">
+      <img src="img/store/gorra2.png" alt="Gorra 2" style="width:100%">
+      <h4>Gorra marron</h4>
+      <p>Gorra marron con nuestro logo.</p>
+    </div>
+  </div>
+
+  <div class="column otros">
+    <div class="content">
+      <img src="img/store/gafas.png" alt="Gafas" style="width:100%">
+      <h4>Gafas</h4>
+      <p>Gafas sin cristal con nuestro logo.</p>
+    </div>
+  </div>
+
+<script>
+  filterSelection("all");
+</script>
+
+<!-- END GRID -->
+</div>
   </body>
 </html>
