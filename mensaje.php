@@ -19,7 +19,11 @@
 			return $this->informacion;
 		}
 		function addcomentario($coment){
-			$this->comentarios['1'] = $coment;
+			// añade al array comentarios , coment
+			array_push($this->comentarios, $coment);
+			//al ser un array puedes hacer un lenght de ese array y te devuelve el tamaño xd
+			//si haces un ++ de ncom ,tambien tienes que tener un --
+			// $this->comentarios['1'] = $coment;
 			$this->ncom++;
 		}
 		function get_list(){

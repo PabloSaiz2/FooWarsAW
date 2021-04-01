@@ -5,25 +5,25 @@
     include_once('comentario.php');
 ?>
 <?php
-  $mensaje1 = new Mensaje("prueba","Antonio",'true',"all") ;
-  $mensaje2 = new Mensaje("prueba2","Antonio",'true',"all") ;
-  $comentario1= new comentario("rafa","prueba comentario");
-  $comentario2= new comentario("rafa","prueba comentario2");
-  $mensaje1->addcomentario($comentario1);
-  $mensaje2->addcomentario($comentario2);
+  $mensaje1 = new Mensaje("hilo1","Antonio",'true',"all") ;
+  $mensaje2 = new Mensaje("hilo2","Antonio",'true',"all") ;
+  $comentarioA1= new comentario("rafa","prueba comentario");
+  $comentarioA2= new comentario("rafa","prueba comentario2");
+  $comentarioA3= new comentario("rafa","prueba comentario2");
+  $comentarioB1= new comentario("rafa","prueba comentario2");
+  $comentarioB2= new comentario("rafa","prueba comentario2");
+  $comentarioB3= new comentario("rafa","prueba comentario2");
+  $mensaje1->addcomentario($comentarioA1);
+  $mensaje1->addcomentario($comentarioA2);
+  $mensaje1->addcomentario($comentarioA3);
+
+  $mensaje2->addcomentario($comentarioB1);
+  $mensaje2->addcomentario($comentarioB2);
+  $mensaje2->addcomentario($comentarioB3);
   $lista = array('1' => $mensaje1 ,'2' => $mensaje2 );
 
  ?>
- <script >
-   function cargarlista(mensaj){
-     <?php
-        $res = mensaj;
-        foreach ( $res as $val) {
-           echo "<h3>". $val->get_contenido() . "</br><h3>";
-        }
-     ?>
-   }
- </script>
+ 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -36,25 +36,47 @@
         include_once('header.php');
       ?>
       <section>
-          <div>
-            <?php
+          <div >
 
-            foreach ($lista as  $value) {
-              echo "<h2>" . $value->get_info() . "</br></h2>";
-             $res = $value->get_list();
-            echo  "<button type='button'onclick = 'cargarlista('$res')'>cargar comentarios</button>";
-            //  foreach ( $res as $val) {
-            //    echo "<h3>". $val->get_contenido() . "</br><h3>";
-            //  }
-              echo "<form action = 'forum.php' method = 'post'>
-              <p>escribe un comentario</p>
-        			<input type = 'text' name ='comentario' value=''>
-        			<br/>
-        			<input type = 'submit' value='confirmar'>
-        			</form>";
-            }
+            <?php
+              $cont=0;
+              foreach ($lista as  $value) {
+                echo "<hr><div>";
+                echo "<h2>" .$value->get_info() . "</h2>";
+                // $res = $value->get_list();
+                //echo  "<button type='button' >cargar comentarios</button>";
+                // echo  "<button type='button' onclick='cargarlista('$res')'>cargar comentarios</button>";
+                
+                foreach ( $value->get_list() as $val) {
+                  echo "<h3>". $val->get_contenido() . "<h3>";
+                }
+                echo "</div>";
+              }
             ?>
+              <hr>
+              <p>Escribe un comentario</p>
+              <input id="comentario"type = 'text' name ='comentario' value=''>
+              <br/>
+              <input type = 'submit' value='confirmar' onclick="cargarComentario()">
+            <hr>
+              <div id='comentariosNuevos'></div>
+              
           </div>
       </section>
+
+      <script type="text/javascript">
+
+        document.getElementById('btn1').onclick = function () {
+                        alert('hola mundo!');
+        }
+        function cargarComentario(){
+          var elemento = document.createElement("h3");
+          var mensaje=document.getElementById('comentario').value;
+          elemento.innerHTML=mensaje;
+          document.getElementById("comentariosNuevos").appendChild(elemento);
+        }
+
+      
+      </script>
   </body>
 </html>
