@@ -17,7 +17,15 @@
         include_once('header.php');
       ?>
       <section>
-            <canvas id = "mapEditor" width=1000 height=562></canvas>
+            <a id = "download"download="Mapa.png">
+                <button onClick="downloadCanvas()">Guardar</button>
+            </a>
+            <div>
+                <input type="color" id ="color" value="#6a6a6a">
+                <label for="color">Selecciona color</label>
+            </div>
+            <canvas id = "mapEditor" width=1500 height=1865></canvas>
+           
       </section>
   </body>
 </html>
