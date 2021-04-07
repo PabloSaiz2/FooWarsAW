@@ -17,6 +17,7 @@
             }
             else{
                 echo('<p class = "header-element"><a href="login.php">Login</a></p>');
+                echo('<p class = "header-element"><a href="registro.php">Registro</a></p>');
             }
         ?>
         <img class = "header-element" src="img/user_placeholder.jpg" alt="Un placeholder para la imagen de usuario">

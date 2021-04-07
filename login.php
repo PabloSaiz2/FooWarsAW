@@ -17,7 +17,7 @@
             <form action="processLogin.php" method="post">
                 <div class = "input-div">
                     <label for="username">Usuario:</label>
-                    <input id ="username" type="text" name = "user" placeholder = "Ambrosio">
+                    <input id ="username" type="text" name = "user" placeholder = "usuario">
                 </div>
                 <div class = "input-div">
                     <label for="password">Contraseña:</label>
