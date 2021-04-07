@@ -24,7 +24,7 @@
                 <input type="color" id ="color" value="#6a6a6a">
                 <label for="color">Selecciona color</label>
             </div>
-            <canvas id = "mapEditor" width=1200 height=1865></canvas>
+            <canvas id = "mapEditor" width=1500 height=1865></canvas>
            
       </section>
   </body>

@@ -20,6 +20,9 @@
     margin-right: auto;
     margin-bottom: 1%;
 }
+#mapEditor{
+    overflow-x: scroll;
+}
 .input-div label{
     display: block;
 }
