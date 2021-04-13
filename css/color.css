@@ -1,10 +1,10 @@
 
   .container {
-    background-color: #7A42B3;
+    background-color: #505050;
     padding: 20px 40px;
     border-radius: 5px;
     height: 60vh;
-    margin: 60px 80px ;
+    margin: 40px 150px ;
   }
   
   .container h1 {
