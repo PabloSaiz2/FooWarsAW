@@ -5,10 +5,10 @@
     require_once('functions.php');
     //Hasta que tengamos hecha la base de datos va a ir con valores harcodeados
     $usuario=$_POST['user'];
-    $contraseña=$_POST['userpass'];
+    $password=$_POST['userpass'];
 
     if(isValidLogin()){
-        $query= "SELECT * FROM usuarios WHERE usuario= '$usuario' AND contraseña= '$contraseña'";
+        $query= "SELECT * FROM usuarios WHERE usuario= '$usuario' AND password= '$password'";
         $consulta= mysqli_query($conexion,$query);
 
         if($row=mysqli_fetch_assoc($consulta)){
