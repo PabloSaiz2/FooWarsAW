@@ -11,7 +11,7 @@
   
     
   </head>
-  <body class="app">
+  <body >
         <?php
           include_once('header.php');
         ?>

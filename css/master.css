@@ -2,9 +2,11 @@ body{
     background-color: #BDBEC3;
 }
 
+
 #main-header img{
    width: 15%;
    height: auto;
+   border-radius: 100%;
 }
 .header-element{
     display: inline;

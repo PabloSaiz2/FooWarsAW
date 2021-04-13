@@ -1,5 +1,24 @@
 <header id = "main-header">
-    <img class="header-element" src="img/logo_baguettes_of_iron.jpg" alt="Logo de baguettes of iron">
+
+    <!-- <ul class="nav">
+            <li><a href="index.php">
+                     Home  
+                    </a></li>
+            <li><a href="#">
+                 About   
+                </a></li>
+            <li><a href="#">
+                  Services   
+                </a></li>
+            <li><a href="#">
+                 Portfolio   
+                </a></li>
+            <li><a href="#">
+             Contact   
+             </a></li>
+    </ul> -->
+
+    <img class="header-element logo" src="img/logo_baguettes_of_iron.jpg" alt="Logo de baguettes of iron">
     <h1 class="header-element">Baguettes of Iron</h1>
     <nav class="header-element">
         <a href="index.php">Inicio</a>
