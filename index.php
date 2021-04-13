@@ -6,10 +6,12 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css">
+    <link rel="stylesheet" type = "text/css" href="css/master.css?v=<?php echo(rand()); ?>">
     <title>Baguettes of Iron</title>
+  
+    
   </head>
-  <body>
+  <body class="app">
         <?php
           include_once('header.php');
         ?>
@@ -24,7 +26,7 @@
                     
                 <div class="mask">    
                   <div class="overflow">
-                    <div class="slide">1</div>
+                    <div class="slide">Div con informacion del juego falta titulo y descripción</div>
                     <div class="slide">2</div>
                     <div class="slide">3</div>
                     <div class="slide">4</div>

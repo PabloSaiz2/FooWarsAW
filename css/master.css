@@ -1,3 +1,7 @@
+body{
+    background-color: #BDBEC3;
+}
+
 #main-header img{
    width: 15%;
    height: auto;
@@ -34,6 +38,9 @@
 #slides input.set{
     display:none; 
 }
+.mask{
+    height: 200% !important;
+}
 
 #slide1:checked ~ .mask .overflow { margin-left:0; }
 #slide2:checked ~ .mask .overflow { margin-left:-100%; }
@@ -44,13 +51,19 @@
 #slides .mask { width:90%; overflow:hidden; margin:auto; }
 #slides .overflow { 
     width:400%;
+    height: 60vh !important;
     transform:translateZ(0);
     transition:all 0.5s ease-out; 
     transition:all 0.5s ease-out; 
     transition:all 0.5s ease-out; 
     transition:all 0.5s ease-out; 
 }
-#slides .slide { width:25%; height:200px; line-height:200px; float:left; background:green; }
+#slides .slide { 
+    width:25%; 
+    height: 60vh !important;
+    line-height:200px;
+    float:left; 
+    background: rgb(66, 75, 117); }
 #controls { width:100%; }
 #controls label { 
     display:none;
@@ -73,4 +86,7 @@
 #slide2:checked ~ #controls label:nth-child(1), #slide3:checked ~ #controls label:nth-child(2), #slide4:checked ~ #controls label:nth-child(3) { 
     left:0;
      display:block;
+}
+.mask{
+    height: 60vh !important;
 }
