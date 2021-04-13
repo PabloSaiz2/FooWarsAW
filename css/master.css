@@ -60,10 +60,11 @@ body{
     transition:all 0.5s ease-out; 
     transition:all 0.5s ease-out; 
 }
+
 #slides .slide { 
     width:25%; 
     height: 60vh !important;
-    line-height:200px;
+    
     float:left; 
     background: rgb(66, 75, 117); }
 #controls { width:100%; }
@@ -91,4 +92,16 @@ body{
 }
 .mask{
     height: 60vh !important;
+}
+.slide h1{
+    text-align: center;
+    font-size: 11vh;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+}
+.slide p{
+    color: white;
+    text-align: center;
+    padding: 2vw;
+    font-size: 2vh;
 }
