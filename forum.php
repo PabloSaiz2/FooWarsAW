@@ -3,9 +3,10 @@
     require_once('validation.php');
     include_once('mensaje.php');
     include_once('comentario.php');
+    include_once('conexion.php')
 ?>
 <?php
-  $mensaje1 = new Mensaje("hilo1","Antonio",'true',"all") ;
+  /*$mensaje1 = new Mensaje("hilo1","Antonio",'true',"all") ;
   $mensaje2 = new Mensaje("hilo2","Antonio",'true',"all") ;
   $comentarioA1= new comentario("rafa","prueba comentario");
   $comentarioA2= new comentario("rafa","prueba comentario2");
@@ -20,8 +21,12 @@
   $mensaje2->addcomentario($comentarioB1);
   $mensaje2->addcomentario($comentarioB2);
   $mensaje2->addcomentario($comentarioB3);
-  $lista = array('1' => $mensaje1 ,'2' => $mensaje2 );
-
+  $lista = array('1' => $mensaje1 ,'2' => $mensaje2 );*/
+  $pagina = $_GET['pag'];
+  $numero_inicial=5*($pagina-1);
+  $numero_final =5*($pagina);
+  $busca = "SELECT * FROM hilos WHERE id BETWEEN  '$numero_inicial' AND '$numero_final' ";
+  $comentarios = $conexion->query($busca);
  ?>
  
 <!DOCTYPE html>
@@ -39,19 +44,15 @@
           <div >
 
             <?php
-              $cont=0;
-              foreach ($lista as  $value) {
-                echo "<hr><div>";
-                echo "<h2>" .$value->get_info() . "</h2>";
-                // $res = $value->get_list();
-                //echo  "<button type='button' >cargar comentarios</button>";
-                // echo  "<button type='button' onclick='cargarlista('$res')'>cargar comentarios</button>";
-                
-                foreach ( $value->get_list() as $val) {
-                  echo "<h3>". $val->get_contenido() . "<h3>";
-                }
-                echo "</div>";
-              }
+            while($hilo=$comentarios->fetch_assoc()){	
+              	$id1= $hilo['id'];
+            
+              //"<a href='discusion.php?id=" . $hilo1->$id ."'>". $hilo1->$titulo "</a>;"
+              //"<a href='discusion.php?id='>". $hilo2->$titulo "</a>"
+              	echo "<div>";
+              	echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
+              	echo "<div>";
+            }
             ?>
               <hr>
               <p>Escribe un comentario</p>
