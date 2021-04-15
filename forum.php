@@ -54,12 +54,20 @@
               	echo "<div>";
             }
             ?>
+            <hr>
+              <p>Escribe un comentario</p>
+              <input id="comentario"type = 'text' name ='comentario' value=''>
+              <br/>
+              <input type = 'submit' value='confirmar' onclick="cargarComentario()">
+              <hr>
+              <div id='comentariosNuevos'></div>
+
               <hr>
               <p>Escribe un comentario</p>
               <input id="comentario"type = 'text' name ='comentario' value=''>
               <br/>
               <input type = 'submit' value='confirmar' onclick="cargarComentario()">
-            <hr>
+              <hr>
               <div id='comentariosNuevos'></div>
               
           </div>

@@ -1,5 +1,5 @@
 <?php
-    require_once('bootup.php');
+    include_once('bootup.php');
     require_once('validation.php');
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
       ?>
       <div class="container">
           <h1>Login</h1>
-                <form action="processLogin.php" method="post">
+                <form action="procesos/processLogin.php" method="post">
 
                     <div class = "formulario">
 

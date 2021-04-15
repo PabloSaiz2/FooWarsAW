@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-04-2021 a las 12:54:19
+-- Tiempo de generación: 15-04-2021 a las 17:20:02
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -93,7 +93,7 @@ CREATE TABLE `tipo` (
 CREATE TABLE `usuarios` (
   `id` int(10) NOT NULL,
   `usuario` varchar(50) NOT NULL,
-  `contraseña` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `correo` varchar(50) DEFAULT NULL,
@@ -104,8 +104,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`, `nombre`, `apellidos`, `correo`, `rol_id`) VALUES
-(1, 'aaaa', 'aaaa', 'aaaa', 'aaaa', 'aaaa@ucm.es', 1);
+INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `apellidos`, `correo`, `rol_id`) VALUES
+(1, 'aaaa', 'aaaa', 'aaaa', 'aaaa', 'aaaa@ucm.es', 1),
+(9, 'chamako', '', '', '', '', 2),
+(10, 'luis', '12345', 'luis11', 'montenegro', 'lmontene@ucm.es', 2);
 
 -- --------------------------------------------------------
 
@@ -212,7 +214,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
