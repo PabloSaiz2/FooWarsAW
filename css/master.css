@@ -1,9 +1,23 @@
 body{
     background-color: #BDBEC3;
 }
-
-
-#main-header img{
+#wiki-main{
+    display: inline-block;
+    width: 79%;
+}
+#wiki-aside{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}
+.wiki-block{
+    display: block;
+}
+.wiki img{
+    width: 100%;
+    height: auto;
+}
+#main-header img{   
    width: 15%;
    height: auto;
    border-radius: 100%;
