@@ -17,8 +17,13 @@
         include_once('header.php');
       ?>
       <section>
+        <form action="processMap.php" method="post">
+          <input type="text" name="mapName">
+          <input id = "string-map"type="hidden" name="stringMap">
+          <button type="submit">Guardar en el perfil</button>
+        </form>
             <a id = "download"download="Mapa.png">
-                <button onClick="downloadCanvas()">Guardar</button>
+                <button onClick="downloadCanvas()">Descargar</button>
             </a>
             <div>
                 <input type="color" id ="color" value="#6a6a6a">

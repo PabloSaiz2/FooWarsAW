@@ -6,12 +6,10 @@
     //Hasta que tengamos hecha la base de datos va a ir con valores harcodeados
     $usuario=$_POST['user'];
     $password=$_POST['userpass'];
-
     if(isValidLogin()){
         $query= "SELECT * FROM usuarios WHERE usuario= '$usuario' AND password= '$password'";
-        $consulta= mysqli_query($conexion,$query);
-
-        if($row=mysqli_fetch_assoc($consulta)){
+        $result = $conexion->query($query);
+        if($result->num_rows>0){
             createLogguedSession();
             header("Location: ./index.php");
         }

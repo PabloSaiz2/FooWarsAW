@@ -68,6 +68,13 @@ class Map{
             ++i;
         }
     }
+    toString(){
+        var stringStates ="";
+        this.states.forEach(element => {
+            stringStates+=element.name+";"+element.color+"\n";
+        });
+        return stringStates;
+    }
 }
 var map = new Map();
 function downloadCanvas() {
@@ -90,8 +97,7 @@ function updateCanvas(map) {
         context.font = "10px Arial";
         context.fillText(state.name,state.xCenter,state.yCenter);
     });
-    
-
+    document.getElementById("string-map").value = map.toString();
 }
 function initializeListeners(map) {
     var canvas = document.getElementById("mapEditor");
