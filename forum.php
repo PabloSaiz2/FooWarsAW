@@ -43,30 +43,23 @@
       <section>
           <div >
 
-            <?php
-            while($hilo=$comentarios->fetch_assoc()){	
-              	$id1= $hilo['id'];
-            
-              //"<a href='discusion.php?id=" . $hilo1->$id ."'>". $hilo1->$titulo "</a>;"
-              //"<a href='discusion.php?id='>". $hilo2->$titulo "</a>"
-              	echo "<div>";
-              	echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
-              	echo "<div>";
-            }
-            ?>
-            <hr>
-              <p>Escribe un comentario</p>
-              <input id="comentario"type = 'text' name ='comentario' value=''>
-              <br/>
-              <input type = 'submit' value='confirmar' onclick="cargarComentario()">
-              <hr>
-              <div id='comentariosNuevos'></div>
+              <?php
+              while($hilo=$comentarios->fetch_assoc()){	
+                  $id1= $hilo['id'];
+              
+                //"<a href='discusion.php?id=" . $hilo1->$id ."'>". $hilo1->$titulo "</a>;"
+                //"<a href='discusion.php?id='>". $hilo2->$titulo "</a>"
+                  echo "<div>";
+                  echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
+                  echo "<div>";
+              }
+              ?>
 
               <hr>
-              <p>Escribe un comentario</p>
-              <input id="comentario"type = 'text' name ='comentario' value=''>
-              <br/>
-              <input type = 'submit' value='confirmar' onclick="cargarComentario()">
+                <p>Escribe un comentario</p>
+                <input id="comentario"type = 'text' name ='comentario' value=''>
+                <br/>
+                <input type = 'submit' value='confirmar' onclick="cargarComentario()">
               <hr>
               <div id='comentariosNuevos'></div>
               
