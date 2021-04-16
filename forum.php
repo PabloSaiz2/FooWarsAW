@@ -43,6 +43,7 @@
       <section>
           <div >
 
+<<<<<<< HEAD
               <?php
               while($hilo=$comentarios->fetch_assoc()){	
                   $id1= $hilo['id'];
@@ -62,23 +63,32 @@
                 <input type = 'submit' value='confirmar' onclick="cargarComentario()">
               <hr>
               <div id='comentariosNuevos'></div>
+=======
+            <?php
+            while($hilo=$comentarios->fetch_assoc()){	
+              	$id1= $hilo['id'];
+              //"<a href='discusion.php?id=" . $hilo1->$id ."'>". $hilo1->$titulo "</a>;"
+              //"<a href='discusion.php?id='>". $hilo2->$titulo "</a>"
+              	echo "<div>";
+              	echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
+              	echo "<div>";
+            }
+            ?>
+              <hr>
+              <form action = "nuevomensaje.php " method = "post">
+              <p>crea un nuevo hilo</p>
+              <input id="comentario"type = 'text' name ='comentario' value=''>
+              <br/>
+              <input id="informacion"type = 'text' name ='informacion' value=''>
+              <br/>
+              <input type = 'submit' value='confirmar'>
+              </form>
+            <hr>
+              
+>>>>>>> 067bee68eea4f18bb2a22459d94cd39b4856e042
               
           </div>
       </section>
 
-      <script type="text/javascript">
-
-        document.getElementById('btn1').onclick = function () {
-                        alert('hola mundo!');
-        }
-        function cargarComentario(){
-          var elemento = document.createElement("h3");
-          var mensaje=document.getElementById('comentario').value;
-          elemento.innerHTML=mensaje;
-          document.getElementById("comentariosNuevos").appendChild(elemento);
-        }
-
-      
-      </script>
   </body>
 </html>
