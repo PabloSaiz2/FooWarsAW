@@ -59,5 +59,7 @@
           <section class="noticas"></section>
           <section class="game"></section>
       </div>
+
+  
   </body>
 </html>

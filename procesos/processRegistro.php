@@ -1,8 +1,8 @@
 <?php
-    require_once('conexion.php');
-    require_once('bootup.php');
-    require_once('validation.php');
-    require_once('functions.php');
+    include_once('../conexion.php');
+    include_once('../bootup.php');
+    include_once('../validation.php');
+    include_once('../functions.php');
     //Hasta que tengamos hecha la base de datos va a ir con valores harcodeados
     $usuario=$_POST['user'];
     $password1=$_POST['userpass'];
@@ -14,7 +14,7 @@
 
     if(isValidRegistro()){
         //contraseñas 1 y 2 ?
-        if($contraseña1==$contraseña2){
+        if($password1==$password2){
             $query="SELECT * FROM usuarios WHERE usuario='$usuario' ";
             
             $consulta= mysqli_query($conexion,$query);
@@ -25,10 +25,10 @@
             }
            
             else{
-                    $query2="INSERT INTO usuarios (usuario,contraseña,nombre,apellidos,correo,rol_id) VALUES ('$usuario','$contraseña1','$nombre','$apellido','$correo','2')";
+                    $query2="INSERT INTO usuarios (usuario,password,nombre,apellidos,correo,rol_id) VALUES ('$usuario','$password1','$nombre','$apellido','$correo','2')";
                      $consulta2= mysqli_query($conexion,$query2);
                      createLogguedSession();
-                    header("location:index.php");
+                    header("location:../index.php");
                 }
             }
         //contraseñas no son iguales        
@@ -39,6 +39,6 @@
     }
     //no registro valido
     else{
-        header("Location: ./registro.php");
+        header("Location: ../registro.php");
     }
 ?>
