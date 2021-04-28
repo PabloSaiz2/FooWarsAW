@@ -17,7 +17,7 @@
         include_once('header.php');
       ?>
       <section>
-        <form action="processMap.php" method="post">
+        <form action="procesos/processMap.php" method="post">
           <input type="text" name="mapName">
           <input id = "string-map"type="hidden" name="stringMap">
           <button type="submit">Guardar en el perfil</button>
