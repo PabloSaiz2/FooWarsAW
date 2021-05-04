@@ -1,4 +1,5 @@
 <?php
+	namespace es\fdi\ucm\aw;
 	class comentario{
 		private $usuario;
 		public $contenido;

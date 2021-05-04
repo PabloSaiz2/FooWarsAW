@@ -1,4 +1,5 @@
 <?php
+	namespace es\fdi\ucm\aw;
 	include_once('comentario.php');
 	class Mensaje{
 		private $informacion;

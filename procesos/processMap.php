@@ -1,5 +1,5 @@
 <?php
-    require_once('../conexion.php');
+    //require_once('../conexion.php');
     require_once('../bootup.php');
     require_once('../validation.php');
     require_once('../logincheck.php');
@@ -10,6 +10,6 @@
         fwrite($file,$mapData);
         fclose($file);
         $query="INSERT INTO mapa (nombre, ruta) VALUES('$title','maps/$username.bohmap')";
-        $conexion->query($query);  
+        Aplicacion::getInstance()->query($query);  
         header("Location: ../dashboard.php");
 ?>

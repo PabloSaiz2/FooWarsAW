@@ -1,5 +1,5 @@
 <?php
-    include_once('../conexion.php');
+    //include_once('../conexion.php');
     include_once('../bootup.php');
     include_once('../validation.php');
     include_once('../functions.php');
@@ -8,7 +8,7 @@
     $password=$_POST['userpass'];
     if(isValidLogin()){
         $query= "SELECT * FROM usuarios WHERE usuario= '$usuario' AND password= '$password'";
-        $result = $conexion->query($query);
+        $result = $Aplicacion::getInstance()->query($query);
         if($result->num_rows>0){
             createLogguedSession();
             header("Location: ../index.php");
