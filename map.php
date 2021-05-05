@@ -1,21 +1,7 @@
 <?php
-    require_once('includes/bootup.php');
-    require_once('includes/validation.php');
-    require_once('includes/logincheck.php');
-?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css">
-    <title>Baguettes of Iron</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type = "text/javascript" src="js/map.js"></script>
-  </head>
-  <body>
-      <?php
-        include_once('includes/reutilizables/header.php');
-      ?>
+  $tituloPagina='Baguettes of Iron - Wiki';
+
+  $contenido=<<<EOF
       <section>
         <form action="procesos/processMap.php" method="post">
           <input type="text" name="mapName">
@@ -32,5 +18,6 @@
             <canvas id = "mapEditor" width=1500 height=1865></canvas>
            
       </section>
-  </body>
-</html>
+  EOF;
+  require_once __DIR__.'/includes/plantillas/plantillamapa.php'; 
+
