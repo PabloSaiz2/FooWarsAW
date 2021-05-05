@@ -1,19 +1,10 @@
 <?php
-    require_once('includes/bootup.php');
-    require_once('includes/validation.php');
+
     //require_once('logincheck.php');
-?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css">
-    <title>Baguettes of Iron - Wiki</title>
-  </head>
-  <body>
-      <?php
-        include_once('includes/reutilizables/header.php');
-      ?>
+
+
+    $tituloPagina='Baguettes of Iron - Wiki';
+    $contenido =<<<EOF
       <div>
           <a href="wikiEditor.php?title=industria">Editar</a>
       </div>
@@ -43,5 +34,5 @@
           sunt in culpa qui officia deserunt mollit anim id est laborum.
            </p>
       </section>
-  </body>
-</html>
+    EOF;
+    require_once __DIR__.'/includes/plantillas/plantillaB.php'; 

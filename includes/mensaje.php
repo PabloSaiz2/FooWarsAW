@@ -1,6 +1,8 @@
 <?php
-	namespace es\fdi\ucm\aw\comentario;
-	
+	include_once('comentario.php');
+	include_once('conexion.php')
+?>
+<?php
 	class Mensaje{
 		private $informacion;
 		private $comentarios;
@@ -16,12 +18,18 @@
 			$this->mensaje=$mensajes;
 			$this->ncom = 0;
 		}
+		function cargarhilos(){
+
+			
+		}
 		function insertMensaje($date){
-			$query = sprintf("INSERT INTO hilos (titulo,fecha,mensaje,id_U) VALUES (%d,%s,%d,%s)"
-			,$this->informacion
-			,$date
-			,$this->mensaje
-			,$this->creador);
+			$host="localhost";
+   	 		$user="root";
+    		$bd="iron";
+    		$contraseña="";
+
+    		$conexion=new mysqli($host,$user,$contraseña,$bd);
+			$query ="INSERT INTO hilos (titulo,fecha,mensaje,id_U) VALUES ('$this->informacion','2000-20-2','aaaa','$this->creador')";
 			$resultado=$conexion->query($query);
 			if($resultado){
 				return $resultado;

@@ -1,21 +1,9 @@
 <?php
-    require_once('includes/bootup.php');
-    require_once('includes/validation.php');
-    require_once('includes/logincheck.php');
-?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css">
-    <title>Baguettes of Iron - Dashboard</title>
-  </head>
-  <body>
-      <?php
-        include_once('includes/reutilizables/header.php');
-      ?>
+   $tituloPagina = 'Baguettes of Iron - Dashboard';
+   $contenido=<<<EOF
       <section>
             <a href="map.php">Crear mapa</a>
       </section>
-  </body>
-</html>
+    EOF;
+    require_once __DIR__.'/includes/plantillas/plantillaB.php'; 
+    require_once('logincheck.php');

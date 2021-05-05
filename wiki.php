@@ -1,19 +1,8 @@
 <?php
-    require_once('includes/bootup.php');
-    require_once('includes/validation.php');
     //require_once('logincheck.php');
-?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css">
-    <title>Baguettes of Iron - Wiki</title>
-  </head>
-  <body>
-      <?php
-        include_once('includes/reutilizables/header.php');
-      ?>
+    $tituloPagina='Baguettes of Iron - Wiki';
+
+    $contenido=<<<EOF
       <aside class="wiki" id ="wiki-aside">
           <h3>La Wiki de Baguettes of Iron</h3>
           <img src="img/logo_baguettes_of_iron.jpg" alt="Logo de la página">
@@ -43,5 +32,5 @@
                <a href="wikiArticle.php?title=industria">Industria</a>
            </div>
       </section>
-  </body>
-</html>
+    EOF;
+  require_once __DIR__.'/includes/plantillas/plantillaB.php'; 
