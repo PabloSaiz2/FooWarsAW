@@ -1,6 +1,6 @@
 <?php
-    require_once('bootup.php');
-    require_once('validation.php');
+    require_once('includes/bootup.php');
+    require_once('includes/validation.php');
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -14,7 +14,7 @@
   
   <body>
       <?php
-        include_once('header.php');
+        include_once('includes/reutilizables/header.php');
       ?>
 	  
 <!-- Slideshow container -->

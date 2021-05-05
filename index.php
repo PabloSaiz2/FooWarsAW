@@ -13,7 +13,7 @@
   </head>
   <body >
         <?php
-          include_once('header.php');
+          include_once('includes/reutilizables/header.php');
         ?>
 
       <div class="inicio">

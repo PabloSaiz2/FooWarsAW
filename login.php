@@ -1,6 +1,6 @@
 <?php
-    include_once('bootup.php');
-    require_once('validation.php');
+    include_once('includes/bootup.php');
+    require_once('includes/validation.php');
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -12,7 +12,7 @@
   </head>
   <body>
       <?php
-        include_once('header.php');
+        include_once('includes/reutilizables/header.php');
       ?>
       <div class="container">
           <h1>Login</h1>

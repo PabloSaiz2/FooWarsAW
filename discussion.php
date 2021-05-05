@@ -1,14 +1,12 @@
 <?php
-	require_once('bootup.php');
-    require_once('validation.php');
-    include_once('mensaje.php');
-    include_once('comentario.php');
-    include_once('conexion.php')
+	require_once('includes/bootup.php');
+    require_once('includes/validation.php');
+    use es\fdi\ucm\aw\{comentario,Mensaje,Aplicacion};
 ?>
 <?php
 	$padre=$_GET['id'];
 	$busqueda = "SELECT * FROM comentarios WHERE id_hilo = '$padre' ";
-	$comentarios = $conexion->query($busqueda);
+	$comentarios = Aplicacion::conexionBD()->query($busqueda);
 	$mensaje 
 ?>
 <!DOCTYPE html>

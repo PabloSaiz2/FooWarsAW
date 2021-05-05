@@ -1,6 +1,6 @@
 <?php
-	namespace es\fdi\ucm\aw;
-	include_once('comentario.php');
+	namespace es\fdi\ucm\aw\comentario;
+	
 	class Mensaje{
 		private $informacion;
 		private $comentarios;
