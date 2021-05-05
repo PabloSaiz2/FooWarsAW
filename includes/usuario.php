@@ -16,7 +16,7 @@
         public static function buscarUsuario($nombreUsuario){
             $preparedStatement=Aplicacion::getInstance()->
             conexionBD()->
-            prepare("SELECT usuario,password_user,rol_id FROM usuarios WHERE usuario=?");
+            prepare("SELECT usuario,password,rol_id FROM usuarios WHERE usuario=?");
             $preparedStatement->bind_param("s",$nombreUsuario);
             $preparedStatement->execute();
             $preparedStatement->store_result();
@@ -47,7 +47,7 @@
         public static function crea($nombreUsuario,$password,$nombre,$apellidos,$correo,$rol){
             $preparedStatement = Aplicacion::getInstance()->
             conexionBD()->
-            prepare("INSERT INTO usuarios (usuario,password_user,nombre,apellidos,correo,rol_id) VALUES(?,?,?,?,?,?)");
+            prepare("INSERT INTO usuarios (usuario,password,nombre,apellidos,correo,rol_id) VALUES(?,?,?,?,?,?)");
             $preparedStatement->bind_param("sssssi",$nombreUsuario,$password,$nombre,$apellidos,$correo,$rol);
             $preparedStatement->execute();
             $preparedStatement->close();  
