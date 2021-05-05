@@ -1,6 +1,6 @@
 <?php
-    require_once('bootup.php');
-    require_once('validation.php');
+     require_once __DIR__.'/../bootup.php';
+     require_once __DIR__.'/../validation.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -11,7 +11,7 @@
   </head>
   <body >
     <?php
-          require_once __DIR__.'\..\comun\header.php';
+          require_once __DIR__.'/../comun/header.php';
     ?>
     <?= $contenido ?>
   </body>
