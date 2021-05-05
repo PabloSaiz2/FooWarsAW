@@ -1,23 +1,9 @@
 <?php
 
-    require_once('includes/bootup.php');
-    require_once('includes/validation.php');
-  
-?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css">
-    <title>Baguettes of Iron - Contacto</title>
-  </head>
-  <body>
-      <?php
-        include_once('includes/reutilizables/header.php');
-      ?>
+   $tituloPagina= 'Baguettes of Iron - Contacto';
+
+   $contenido=<<<EOF
    <section>
-   
- 
  <div>
 	<div>
 	<center><h1>Miembros</h1><center/>
@@ -145,5 +131,5 @@ div div {
 </style>
 
 </section>
-</body>
-</html
+EOF;
+require_once __DIR__.'/includes/plantillas/plantillaB.php'; 

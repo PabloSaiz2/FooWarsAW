@@ -1,7 +1,7 @@
 <?php
-    require_once('includes/bootup.php');
-    require_once('includes/validation.php');
-    require_once('logincheck.php');
+    require_once('bootup.php');
+    require_once('validation.php');
+    //require_once('logincheck.php');
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -13,7 +13,7 @@
   </head>
   <body>
       <?php
-        include_once('includes/reutilizables/header.php');
+        include_once('header.php');
       ?>
       <div>
           <a href="wikiEditor.php?title=industria">Editar</a>
