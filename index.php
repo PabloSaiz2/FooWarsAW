@@ -15,7 +15,7 @@
         <?php
           include_once('includes/reutilizables/header.php');
         ?>
-
+  
       <div class="inicio">
           <section class="juego">
             <div id="slides">

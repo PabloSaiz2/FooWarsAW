@@ -3,15 +3,14 @@
     include_once('../includes/bootup.php');
     include_once('../includes/validation.php');
     include_once('../includes/functions.php');
-    use es\fdi\ucm\aw\Aplicacion;
+    use es\fdi\ucm\aw\Usuario;
     //Hasta que tengamos hecha la base de datos va a ir con valores harcodeados
     $usuario=$_POST['user'];
     $password=$_POST['userpass'];
     if(isValidLogin()){
-        $query= "SELECT * FROM usuarios WHERE usuario= '$usuario' AND password= '$password'";
-        $result = Aplicacion::getInstance()->conexionBD()->query($query);
-        if($result->num_rows>0){
-            createLogguedSession();
+        $result = Usuario::login($usuario,$password);
+        if($result){
+            createLogguedSession($result->getName());
             header("Location: ../index.php");
         }
         else{

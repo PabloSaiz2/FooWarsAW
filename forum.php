@@ -24,7 +24,7 @@
   $numero_inicial=5*($pagina-1);
   $numero_final =5*($pagina);
   $busca = "SELECT * FROM hilos WHERE id BETWEEN  '$numero_inicial' AND '$numero_final' ";
-  $comentarios = $conexion->query($busca);
+  $comentarios = Aplicacion::getInstance()->conexionBD()->query($busca);
  ?>
  
 <!DOCTYPE html>
@@ -36,7 +36,7 @@
   </head>
   <body>
       <?php
-        include_once('header.php');
+        include_once('includes/reutilizables/header.php');
       ?>
       <section>
           <div >

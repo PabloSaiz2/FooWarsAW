@@ -6,7 +6,7 @@
         private static  $instance = null;
         private $conn=null;
         public $datosBD=array();
-        public function getInstance(){
+        public static function getInstance(){
             if(Aplicacion::$instance==null)
                 Aplicacion::$instance = new Aplicacion();
             return Aplicacion::$instance;

@@ -1,7 +1,7 @@
 <?php
-    function createLogguedSession(){
+    function createLogguedSession($username){
         $_SESSION['login'] = true;
-        $_SESSION['username'] = $_POST['user'];
+        $_SESSION['username'] =$username;
     }
     function logout(){
         session_destroy();
