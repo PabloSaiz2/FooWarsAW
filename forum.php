@@ -21,57 +21,22 @@
   $mensaje2->addcomentario($comentarioB3);
   $lista = array('1' => $mensaje1 ,'2' => $mensaje2 );*/
   $pagina = $_GET['pag'];
-  $numero_inicial=5*($pagina-1);
-  $numero_final =5*($pagina);
-  $busca = "SELECT * FROM hilos WHERE id BETWEEN  '$numero_inicial' AND '$numero_final' ";
-  $comentarios = Aplicacion::getInstance()->conexionBD()->query($busca);
- ?>
- 
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css">
-    <title>Baguettes of Iron</title>
-  </head>
-  <body>
-      <?php
-        include_once('includes/reutilizables/header.php');
-      ?>
+  $foro=Mensaje::cargarhilos($pagina);  
+ // $tituloPagina = 'Baguettes of iron -Foro';
+   //         while($hilo=$comentarios->fetch_assoc()){	
+    //          	$id1= $hilo['id'];
+              //"<a href='discusion.php?id=" . $hilo1->$id ."'>". $hilo1->$titulo "</a>;"
+              //"<a href='discusion.php?id='>". $hilo2->$titulo "</a>"
+      //        	echo "<div>";
+        //      	echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
+         //     	echo "<div>";
+           // }
+  $tituloPagina = 'Baguettes of iron -Foro';
+  $contenido=<<<EOF
+      $foro
       <section>
           <div >
 
-<<<<<<< HEAD
-              <?php
-              while($hilo=$comentarios->fetch_assoc()){	
-                  $id1= $hilo['id'];
-              
-                //"<a href='discusion.php?id=" . $hilo1->$id ."'>". $hilo1->$titulo "</a>;"
-                //"<a href='discusion.php?id='>". $hilo2->$titulo "</a>"
-                  echo "<div>";
-                  echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
-                  echo "<div>";
-              }
-              ?>
-
-              <hr>
-                <p>Escribe un comentario</p>
-                <input id="comentario"type = 'text' name ='comentario' value=''>
-                <br/>
-                <input type = 'submit' value='confirmar' onclick="cargarComentario()">
-              <hr>
-              <div id='comentariosNuevos'></div>
-=======
-            <?php
-            while($hilo=$comentarios->fetch_assoc()){	
-              	$id1= $hilo['id'];
-              //"<a href='discusion.php?id=" . $hilo1->$id ."'>". $hilo1->$titulo "</a>;"
-              //"<a href='discusion.php?id='>". $hilo2->$titulo "</a>"
-              	echo "<div>";
-              	echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
-              	echo "<div>";
-            }
-            ?>
               <hr>
               <form action = "nuevomensaje.php " method = "post">
               <p>crea un nuevo hilo</p>
@@ -83,10 +48,9 @@
               </form>
             <hr>
               
->>>>>>> 067bee68eea4f18bb2a22459d94cd39b4856e042
               
           </div>
       </section>
-
-  </body>
-</html>
+  EOF;
+  require_once __DIR__.'/includes/plantillas/plantillaB.php'; 
+?>

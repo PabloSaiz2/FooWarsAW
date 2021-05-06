@@ -16,11 +16,24 @@
 		function get_contenido(){
 			return $this->contenido;
 		}
-	//	function addrespuesta(){
+		function addrespuesta(){
 
-		//}
-		//function deletecomentario(){
+		}
+		function deletecomentario(){
 
-		//}
+		}
+		function cargacomentario($padre){
+			$busqueda = "SELECT * FROM comentarios WHERE id_hilo = '$padre' ";
+			$comentarios = Aplicacion::getInstance()->conexionBD()->query($busqueda);
+			$mensaje;
+			$retur=''; 
+			while($mensaje = $comentarios->fetch_assoc()){
+				$intento=$mensaje['comentario'];
+				$retur.=<<<EOS
+				<p> $intento </p></br>
+				EOS;
+			}
+			return $retur;
+		}
 	}
 ?>

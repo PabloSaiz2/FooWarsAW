@@ -1,8 +1,5 @@
 <?php
-	include_once('comentario.php');
-	include_once('conexion.php')
-?>
-<?php
+	namespace es\fdi\ucm\aw;
 	class Mensaje{
 		private $informacion;
 		private $comentarios;
@@ -18,9 +15,21 @@
 			$this->mensaje=$mensajes;
 			$this->ncom = 0;
 		}
-		function cargarhilos(){
-
+		function cargarhilos($numero){
 			
+  			$numero_inicial=5*($numero-1);
+  			$numero_final =5*($numero);
+  			$busca = "SELECT * FROM hilos WHERE id BETWEEN  '$numero_inicial' AND '$numero_final' ";
+  			$comentarios = Aplicacion::getInstance()->conexionBD()->query($busca);
+			$retur ='<h1>hilos<h1>';
+			while($hilo=$comentarios->fetch_assoc()){
+				$id1= $hilo['id'];
+				$title=$hilo['titulo'];
+				$retur.=<<<EOS
+				<a href = ' discussion.php?id= $id1 '> $title </a><br>
+				EOS;
+			}
+			return $retur;
 		}
 		function insertMensaje($date){
 			$host="localhost";

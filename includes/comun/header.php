@@ -32,7 +32,7 @@
         <?php
             if(isValidSession()&&$_SESSION['login']){
                 echo('<p class = "header-element"><a href="dashboard.php">'.$_SESSION['username'].'</a></p>');
-                echo('<p class = "header-element"><a href="logout.php">Cerrar sesión</a></p>');
+                echo('<p class = "header-element"><a href="includes/logout.php">Cerrar sesión</a></p>');
             }
             else{
                 echo('<p class = "header-element"><a href="login.php">Login</a></p>');
