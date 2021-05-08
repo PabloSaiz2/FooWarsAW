@@ -1,7 +1,7 @@
 <?php
     require_once('includes/bootup.php');
     require_once('includes/validation.php');
-    use es\fdi\ucm\aw\{comentario,Mensaje,Aplicacion};
+    use es\fdi\ucm\aw\{comentario,Mensaje,Aplicacion,forumForm};
 ?>
 <?php
   /*$mensaje1 = new Mensaje("hilo1","Antonio",'true',"all") ;
@@ -31,26 +31,12 @@
         //      	echo "<a href = ' discusion.php?id=". $id1 ."'>" . $hilo['titulo'] . "</a>";
          //     	echo "<div>";
            // }
+  $formulario = new forumForm("forumForm");
+  $formularioforo =$formulario->gestiona();
   $tituloPagina = 'Baguettes of iron -Foro';
   $contenido=<<<EOF
       $foro
-      <section>
-          <div >
-
-              <hr>
-              <form action = "nuevomensaje.php " method = "post">
-              <p>crea un nuevo hilo</p>
-              <input id="comentario"type = 'text' name ='comentario' value=''>
-              <br/>
-              <input id="informacion"type = 'text' name ='informacion' value=''>
-              <br/>
-              <input type = 'submit' value='confirmar'>
-              </form>
-            <hr>
-              
-              
-          </div>
-      </section>
+      $formularioforo
   EOF;
   require_once __DIR__.'/includes/plantillas/plantillaB.php'; 
 ?>
