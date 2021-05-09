@@ -1,7 +1,4 @@
-<?php
-    require_once('bootup.php');
-    require_once('validation.php');
-?>
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>

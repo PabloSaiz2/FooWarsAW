@@ -1,5 +1,4 @@
 <?php
-    //require_once('logincheck.php');
     $tituloPagina='Baguettes of Iron - Wiki';
 
     $contenido=<<<EOF

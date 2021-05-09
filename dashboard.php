@@ -6,4 +6,4 @@
       </section>
     EOF;
     require_once __DIR__.'/includes/plantillas/plantillaB.php'; 
-    require_once('logincheck.php');
+    require_once('includes/logincheck.php');

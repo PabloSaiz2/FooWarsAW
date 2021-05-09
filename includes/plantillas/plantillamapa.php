@@ -1,8 +1,4 @@
-<?php
-    require_once('/../bootup.php');
-    require_once('/../validation.php');
-    require_once('/../logincheck.php');
-?>
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>

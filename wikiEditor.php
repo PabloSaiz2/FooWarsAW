@@ -1,7 +1,7 @@
 <?php
-    require_once('bootup.php');
-    require_once('validation.php');
-    //require_once('logincheck.php');
+    require_once('includes/bootup.php');
+    require_once('includes/validation.php');
+    require_once('includes/logincheck.php');
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -13,14 +13,23 @@
   </head>
   <body>
       <?php
-        include_once('header.php');
+        include_once('includes/reutilizables/header.php');
       ?>
-      <div>
-          <a href="wikiEditor.php?title=industria">Editar</a>
-      </div>
       <section class="wiki" id="wiki-main">
-           <form id = "fields" action="#" method="post">
+           <form id = "fields" action="procesos/processArticle.php?title=<?php echo($_GET['title'])?>" method="post">
                 <button type="submit">Guardar</button>
+                <?php
+                    use es\fdi\ucm\aw\Articulo;
+                    $articulo = Articulo::buscarArticulo($_GET['title']);
+                    if($articulo){
+                      $i=0;
+                      foreach ($articulo->getBloques() as $bloque) {
+                        echo("<textarea type = 'text' class = 'wiki-block' name='field$i'>$bloque</textarea>");
+                        ++$i;
+                      }
+                    }
+        
+                ?>
            </form>
            <button onClick="addField()">Añadir bloque</button>
       </section>

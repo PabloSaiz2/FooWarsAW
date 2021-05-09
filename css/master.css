@@ -12,6 +12,10 @@ body{
 }
 .wiki-block{
     display: block;
+ 
+        width: 100%;
+        height: 400px;
+        text-align: justify;
 }
 .wiki img{
     width: 100%;
