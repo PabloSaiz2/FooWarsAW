@@ -32,16 +32,10 @@
 			return $retur;
 		}
 		function insertMensaje($date){
-			$host="localhost";
-   	 		$user="root";
-    		$bd="iron";
-    		$contraseña="";
-
-    		$conexion=new mysqli($host,$user,$contraseña,$bd);
-			$query ="INSERT INTO hilos (titulo,fecha,mensaje,id_U) VALUES ('$this->informacion','2000-20-2','aaaa','$this->creador')";
-			$resultado=$conexion->query($query);
-			if($resultado){
-				return $resultado;
+			$inserta ="INSERT INTO hilos (titulo,fecha,mensaje,id_U) VALUES ('$this->informacion','$date','$this->mensaje','$this->creador')";
+			$operacion=Aplicacion::getInstance()->conexionBD()->query($inserta);
+			if($operacion){
+				return $operacion;
 			}
 		}
 		function get_info(){
@@ -57,6 +51,13 @@
 		}
 		function get_list(){
 			return $this->comentarios;
+		}
+		function encuentraid($usuario){
+			$busca = "SELECT id FROM usuarios WHERE usuario = '$usuario' ";
+			$conexion=Aplicacion::getInstance()->conexionBD()->query($busca);
+			$ids =$conexion->fetch_assoc();
+			$this->creador=$ids['id'];
+			return $this->creador;
 		}
 	}
 
