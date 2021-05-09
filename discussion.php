@@ -2,9 +2,12 @@
 	require_once('includes/bootup.php');
   require_once('includes/validation.php');
   use es\fdi\ucm\aw\{comentario,Mensaje,Aplicacion,comentarioForm};
-
-	$padre=$_GET['id'];
-	$comentarios=comentario::cargacomentario($padre);
+  if(isset($_GET['id'])){
+    $padre=$_GET['id'];
+  }
+	else $padre ='1';
+  $com=new comentario('','','');
+	$comentarios=$com->cargacomentario($padre);
   $formulario = new comentarioForm("comentarioFormForm");
   $formulario->sethilo($padre);
   $formulariocomentarios =$formulario->gestiona();

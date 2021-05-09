@@ -27,8 +27,8 @@
 			$busca = "SELECT id FROM usuarios WHERE usuario = '$nombre' ";
 			$conexion=Aplicacion::getInstance()->conexionBD()->query($busca);
 			$ids =$conexion->fetch_assoc();
-			$is=$ids['id'];
-			return $is;
+			$this->usuario = $ids['id'];
+			return $this->idpadre;
 		}
 		function deletecomentario(){
 

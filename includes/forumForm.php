@@ -24,10 +24,10 @@
 		public function procesaFormulario($datos){
 			if(isset($_SESSION['login'])){
 				$nombre=$_SESSION['username'];
-				$idusuario=Mensaje::encuentraid($nombre);
 				$hilo = $datos['comentario'];
 				$info = $datos['informacion'];
-				$m = new Mensaje($hilo,$idusuario,true,$info);
+				$m = new Mensaje($hilo,'',true,$info);
+				$idusuario=$m->encuentraid($nombre);
 				$fecha=date("Y-m-d");
 				if($m->insertMensaje($fecha)){
 					return  "index.php";

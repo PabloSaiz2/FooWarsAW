@@ -56,8 +56,8 @@
 			$busca = "SELECT id FROM usuarios WHERE usuario = '$usuario' ";
 			$conexion=Aplicacion::getInstance()->conexionBD()->query($busca);
 			$ids =$conexion->fetch_assoc();
-			$is=$ids['id'];
-			return $is;
+			$this->creador=$ids['id'];
+			return $this->creador;
 		}
 	}
 

@@ -26,10 +26,10 @@
         public function procesaFormulario($datos){
 			if(isset($_SESSION['login'])){
                 $nombre=$_SESSION['username'];
-                $idusuario=comentario::encuentraid($nombre);
                 $comentario=$datos['comentario'];
                 $hilopadre = $datos['padre'];
-                $com = new comentario($idusuario,$comentario,$hilopadre);
+                $com = new comentario('',$comentario,$hilopadre);
+                $idusuario=$com->encuentraid($nombre);
                 $fecha=date("Y-m-d");
                 if($com->insertcomentario($fecha)){
 					return  "index.php";
