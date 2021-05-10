@@ -68,14 +68,17 @@
                 $id_articulo_actualizar = $articuloParaActualizar->getId();
                 Aplicacion::getInstance()->
                 conexionBD()->query("DELETE FROM bloques WHERE id_padre=".$articuloParaActualizar->getId());   
+                $random = rand()%500;
+                $i=0;
                 foreach ($bloques as $value) {
-                    $random = rand();
-                    $preparedStatement = Aplicacion::getInstance()->
-                    conexionBD()->
-                    prepare("INSERT INTO bloques (id_hijo,id_padre,contenido) VALUES($random,?,?)");
-                    $preparedStatement->bind_param("is",$id_articulo_actualizar,$value);
-                    $preparedStatement->execute();
-                    echo($preparedStatement->error);
+                    if(strlen(trim($value))>0){
+                        $preparedStatement = Aplicacion::getInstance()->
+                        conexionBD()->
+                        prepare("INSERT INTO bloques (id_hijo,id_padre,contenido) VALUES($random+$i,?,?)");
+                        $preparedStatement->bind_param("is",$id_articulo_actualizar,$value);
+                        $preparedStatement->execute();
+                    }
+                    $i++;
                 }
                 $preparedStatement->close();
             }

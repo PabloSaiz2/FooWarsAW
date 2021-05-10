@@ -3,32 +3,32 @@
 
     $contenido=<<<EOF
       <aside class="wiki" id ="wiki-aside">
-          <h3>La Wiki de Baguettes of Iron</h3>
-          <img src="img/logo_baguettes_of_iron.jpg" alt="Logo de la página">
+          <h3 class = "text-header">La Wiki de Baguettes of Iron</h3>
           <section>
-            <h3>Normas y links relevantes</h3>
-            <a href="#">Normas de estilo</a>
-            <a href="#">Página principal</a>
-            <h3>Herramientas</h3>
-            <a href="#">Cambios relacionados</a>
-            <a href="#">Páginas especiales</a>
-            <h3>Baguettes of Iron Links</h3>
-            <a href="#">Mods</a>
+            <h3 class = "wiki-aside-header text-header">Normas y links relevantes</h3>
+            <a class ="text" href="#">Normas de estilo</a>
+            <a class ="text" href="#">Página principal</a>
+            <h3 class = "wiki-aside-header text-header">Herramientas</h3>
+            <a class ="text" href="#">Cambios relacionados</a>
+            <a class ="text" href="#">Páginas especiales</a>
+            <h3 class = "wiki-aside-header text-header">Baguettes of Iron Links</h3>
+            <a class ="text" href="#">Mods</a>
           </section>
       </aside>
       <section class="wiki" id="wiki-main">
-           <img src="img/logo_baguettes_of_iron.jpg" alt="">
-           <p>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed eiusmod tempor incidunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum.
+           <img src="img/secondary-logo.png" alt="">
+           <p class ="text">
+              <em>¡Bienvenido/a a la wiki de Baguettes of Iron!</em> En esta wiki encontrarás toda la información
+              del juego Hearts of Iron 4, aportada por la comunidad de jugadores. Para colaborar en la wiki
+              tan solo necesitas una cuenta de Baguettes of Iron.
            </p>
-           <div>
-               <h2>Economía</h2>
-               <a href="wikiArticle.php?title=industria">Industria</a>
+           <div class = "wiki-category">
+               <h2 class ="text-header">Economía</h2>
+               <a class = "text" href="wikiArticle.php?title=industria">Industria</a>
+           </div>
+           <div class = "wiki-category">
+               <h2 class ="text-header">General</h2>
+               <a class = "text"href="wikiArticle.php?title=combate">Combate</a>
            </div>
       </section>
     EOF;

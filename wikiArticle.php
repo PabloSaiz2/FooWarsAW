@@ -16,19 +16,18 @@
           include_once('includes/reutilizables/header.php');
     ?>
       <div>
-          <a href="wikiEditor.php?title=<?php echo($tituloEdicion)?>" >Editar</a>
+          <a id = "edit"href="wikiEditor.php?title=<?php echo($tituloEdicion)?>" >Editar &#9881</a>
       </div>
       <aside class="wiki" id ="wiki-aside">
           <h3>La Wiki de Baguettes of Iron</h3>
-          <img src="img/logo_baguettes_of_iron.jpg" alt="Logo de la página">
           <section>
-            <h3>Normas y links relevantes</h3>
+            <h3 class = "wiki-aside-header text-header">Normas y links relevantes</h3>
             <a href="#">Normas de estilo</a>
             <a href="#">Página principal</a>
-            <h3>Herramientas</h3>
+            <h3 class = "wiki-aside-header text-header">Herramientas</h3>
             <a href="#">Cambios relacionados</a>
             <a href="#">Páginas especiales</a>
-            <h3>Baguettes of Iron Links</h3>
+            <h3 class = "wiki-aside-header text-header">Baguettes of Iron Links</h3>
             <a href="#">Mods</a>
           </section>
       </aside>
@@ -46,7 +45,7 @@
            <?php
               if($articulo){
                 foreach ($articulo->getBloques() as $bloque) {
-                  echo("<p>$bloque</p>");
+                  echo("<p class ='text'>$bloque</p>");
                 }
               }
            ?>
