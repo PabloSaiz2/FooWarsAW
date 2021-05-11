@@ -1,6 +1,6 @@
 
   .container {
-    background-color: #33A870;
+    background-color: #9da19f;
     padding: 20px 40px;
     border-radius: 5px;
     height: 60vh;
@@ -18,14 +18,14 @@
     color: lightblue;
   }
   .formulario{
-    width: 50%;
+    width: 45%;
     align-items: center;
     text-align: center;
   }
-  .formulario input{
+  .formulario input,select{
     margin-bottom: 10px;
-    width: 30%;
-    display: block;
+    width: 55%;
+    display:inline;
     margin-left: 85%;
     margin-right: auto;
     text-align: center; 

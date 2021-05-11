@@ -14,9 +14,7 @@
             return $this->nombre;
         }
         public static function buscarUsuario($nombreUsuario){
-            $preparedStatement=Aplicacion::getInstance()->
-            conexionBD()->
-            prepare("SELECT usuario,password,rol_id FROM usuarios WHERE usuario=?");
+            $preparedStatement=Aplicacion::getInstance()->conexionBD()->prepare("SELECT usuario,password,rol_id FROM usuarios WHERE usuario=?");
             $preparedStatement->bind_param("s",$nombreUsuario);
             $preparedStatement->execute();
             $preparedStatement->store_result();

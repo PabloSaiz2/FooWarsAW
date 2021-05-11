@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2021 a las 18:15:17
+-- Tiempo de generación: 10-05-2021 a las 22:43:52
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -83,6 +83,8 @@ CREATE TABLE `hilos` (
 CREATE TABLE `produtos` (
   `id` int(10) NOT NULL,
   `nombre` varchar(50) NOT NULL,
+  `descripcion` varchar(50) NOT NULL,
+  `imagen` varchar(100) NOT NULL,
   `id_tipo` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -107,6 +109,15 @@ CREATE TABLE `tipo` (
   `id` int(10) NOT NULL,
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tipo`
+--
+
+INSERT INTO `tipo` (`id`, `nombre`) VALUES
+(1, 'ropa'),
+(2, 'gorra'),
+(3, 'otros');
 
 -- --------------------------------------------------------
 
@@ -182,6 +193,7 @@ ALTER TABLE `hilos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nombre` (`nombre`),
   ADD KEY `productos_fk_tipo` (`id_tipo`);
 
 --
@@ -257,7 +269,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
