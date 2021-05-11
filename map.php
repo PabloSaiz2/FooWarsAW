@@ -1,7 +1,4 @@
 <?php
-require_once('includes/bootup.php');
-require_once('includes/validation.php');
-require_once('includes/logincheck.php');
   $tituloPagina='Baguettes of Iron - Mapa';
 
   $contenido=<<<EOF

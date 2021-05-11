@@ -1,4 +1,8 @@
-
+<?php
+     require_once __DIR__.'/../bootup.php';
+     require_once __DIR__.'/../validation.php';
+     require_once __DIR__.'/../logincheck.php';
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>

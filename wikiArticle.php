@@ -16,7 +16,13 @@
           include_once('includes/reutilizables/header.php');
     ?>
       <div>
+      <?php
+        if(isValidSession()){
+      ?>
           <a id = "edit"href="wikiEditor.php?title=<?php echo($tituloEdicion)?>" >Editar &#9881</a>
+      <?php 
+        }
+      ?>
       </div>
       <aside class="wiki" id ="wiki-aside">
           <h3>La Wiki de Baguettes of Iron</h3>
