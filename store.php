@@ -1,55 +1,57 @@
 <?php
-    require_once('includes/bootup.php');
-    require_once('includes/validation.php');
+require_once('includes/bootup.php');
+require_once('includes/validation.php');
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
+
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" type = "text/css" href="css/master.css?v=<?php echo(rand());?>">
-<link rel="stylesheet" type = "text/css" href="css/estilo_tienda.css?v=<?php echo(rand());?>">
-<script src="https://kit.fontawesome.com/0afaf0fad2.js" crossorigin="anonymous"></script>
-<script type = "text/javascript" src="js/store/slider.js"></script>
-<title>Baguettes of Iron - Tienda</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/master.css?v=<?php echo (rand()); ?>">
+  <link rel="stylesheet" type="text/css" href="css/estilo_tienda.css?v=<?php echo (rand()); ?>">
+  <script src="https://kit.fontawesome.com/0afaf0fad2.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/store/slider.js"></script>
+  <title>Baguettes of Iron - Tienda</title>
 </head>
-  
+
 <body>
   <?php
-        include_once('includes/comun/header.php');
+  include_once('includes/comun/header.php');
 
-        //query de extraccion de datos
-        use es\fdi\ucm\aw\Producto;
-        $productos = Producto::show();
+  //query de extraccion de datos
+  use es\fdi\ucm\aw\Producto;
+
+  $productos = Producto::show();
   ?>
 
-	
+
   <!-- Slideshow container -->
   <div class="slideshow-container">
-        <!-- Full-width images with number -->
-      <div class="mySlides fade">
-        <div class="numbertext">1 / 5</div>
-        <img src="img/store/photo1.jpg" style="width:100%">
-      </div>
+    <!-- Full-width images with number -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 5</div>
+      <img src="img/store/photo1.jpg" style="width:100%">
+    </div>
 
-      <div class="mySlides fade">
-        <div class="numbertext">2 / 5</div>
-        <img src="img/store/photo2.jpg" style="width:100%">
-      </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 5</div>
+      <img src="img/store/photo2.jpg" style="width:100%">
+    </div>
 
-      <div class="mySlides fade">
-        <div class="numbertext">3 / 5</div>
-        <img src="img/store/photo3.jpg" style="width:100%">
-      </div>
-      
-      <div class="mySlides fade">
-        <div class="numbertext">4 / 5</div>
-        <img src="img/store/photo4.jpg" style="width:100%">
-      </div>
-      
-      <div class="mySlides fade">
-        <div class="numbertext">5 / 5</div>
-        <img src="img/store/photo5.jpg" style="width:100%">
-      </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 5</div>
+      <img src="img/store/photo3.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 5</div>
+      <img src="img/store/photo4.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 5</div>
+      <img src="img/store/photo5.jpg" style="width:100%">
+    </div>
   </div>
   <br>
   <script>
@@ -66,22 +68,35 @@
     <button class="btn" onclick="filterSelection('1')"> Ropa</button>
     <button class="btn" onclick="filterSelection('2')"> Gorras</button>
     <button class="btn" onclick="filterSelection('3')"> Otros</button>
-    
+
     <?php
-       if($_SESSION['rol']==1){
-         ?>
-          <button class="btn" style="background-color:skyblue"><a href="insert.php" style="text-decoration:none"> Añadir Producto</a></button>
-         <?php
-       }
+    if ($_SESSION['rol'] == 1) {
+    ?>
+      <button class="btn" style="background-color:skyblue"><a href="insert.php" style="text-decoration:none"> Añadir Producto</a></button>
+    <?php
+    }
     ?>
   </div>
-  <script type = "text/javascript" src="js/store/products.js"></script>
+  <script type="text/javascript" src="js/store/products.js"></script>
   <!-- Portfolio Gallery Grid -->
   <div id="store">
 
- 
-  <div class="row">
-      <div class="column 1">
+
+    <div class="row">
+      <?php
+      foreach ($productos as $producto) {
+      ?>
+        <div class="column <?php echo $producto['id_tipo']; ?>">
+          <div class="content">
+            <img src="<?php echo $producto['image']; ?>" alt="Gafas" style="width:100%">
+            <h4><?php echo $producto['name']; ?></h4>
+            <p><?php echo $producto['description']; ?></p>
+          </div>
+        </div>
+
+      <?php } ?>
+    </div>
+    <!-- <div class="column 1">
           <div class="content">
             <img src="img/store/camiseta.png" alt="Camiseta" style="width:100%">
             <h4>Camiseta BI</h4>
@@ -124,25 +139,14 @@
             <h4>Gafas</h4>
             <p>Gafas sin cristal con nuestro logo.</p>
           </div>
-      </div>
-      <?php
-        foreach($productos as $producto){
-          ?>
-          <div class="column <?php echo $producto['id_tipo']; ?>">
-            <div class="content">
-              <img src="<?php echo $producto['image']; ?>" alt="Gafas" style="width:100%">
-              <h4><?php echo $producto['name']; ?></h4>
-              <p><?php echo $producto['description']; ?></p>
-            </div>
-        </div>
-      
-        <?php }?>
-        </div>
-      <script>
-        filterSelection("all");
-      </script>
+      </div> -->
+
+    <script>
+      filterSelection("all");
+    </script>
 
     <!-- END GRID -->
   </div>
 </body>
+
 </html>

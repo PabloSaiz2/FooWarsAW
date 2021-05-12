@@ -59,7 +59,7 @@
               }
           }
           Producto::creaProducto($datos['name'],$datos['description'],$nombreArchivo,$datos['select']);
-          return "index.php";  
+          return "store.php";  
        }
     }
 

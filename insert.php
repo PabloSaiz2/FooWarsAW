@@ -8,11 +8,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type = "text/css" href="css/master.css?v=<?php echo(rand());?>">
     <link rel="stylesheet" type = "text/css" href="css/color.css?v=<?php echo(rand());?>">
+    <script src="https://kit.fontawesome.com/0afaf0fad2.js" crossorigin="anonymous"></script>
     <title>Baguettes of Iron - Login</title>
   </head>
   <body>
       <?php
-        include_once('includes/reutilizables/header.php');
+        include_once('includes/comun/header.php');
       ?>
       <div class="container">
           <h1>Insert</h1>

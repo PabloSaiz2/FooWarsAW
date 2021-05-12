@@ -123,7 +123,7 @@ div {
   background-color: lightgrey;
 }
 div div {
-  border: white 3px solid;
+ 
   margin: 10px;
   padding: 10px;
   background-color: lightgrey;
