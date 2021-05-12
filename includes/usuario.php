@@ -26,9 +26,13 @@
             $preparedStatement->close();
             return false;
         }
+        //Lo de la pimienta lo haria más adelante con un fichero una enviroment variable
+        private static function encrypt($password_to_encrypt){
+            return password_hash($password_to_encrypt."baguette",PASSWORD_BCRYPT);
+        }
         private function compruebaPassword($password){
             $correct = false;
-            if(strcmp($this->contra,$password)==0)
+            if(password_verify($password."baguette",$this->contra))
                 $correct = true;
             return $correct;
         }
@@ -43,10 +47,11 @@
             return false;
         }
         public static function crea($nombreUsuario,$password,$nombre,$apellidos,$correo,$rol){
+            $hashed = Usuario::encrypt($password);
             $preparedStatement = Aplicacion::getInstance()->
             conexionBD()->
             prepare("INSERT INTO usuarios (usuario,password,nombre,apellidos,correo,rol_id) VALUES(?,?,?,?,?,?)");
-            $preparedStatement->bind_param("sssssi",$nombreUsuario,$password,$nombre,$apellidos,$correo,$rol);
+            $preparedStatement->bind_param("sssssi",$nombreUsuario,$hashed,$nombre,$apellidos,$correo,$rol);
             $preparedStatement->execute();
             $preparedStatement->close();  
         }

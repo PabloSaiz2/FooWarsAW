@@ -1,6 +1,6 @@
 <?php
   namespace es\fdi\ucm\aw;
-    class comentarioForm extends Form{
+    class ComentarioForm extends Form{
         private $hilo;
         public function sethilo($padre){
             $this->hilo=$padre;

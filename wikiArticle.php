@@ -49,9 +49,15 @@
           ?></h2>
            <img src="img/logo_baguettes_of_iron.jpg" alt="">
            <?php
+           
               if($articulo){
                 foreach ($articulo->getBloques() as $bloque) {
-                  echo("<p class ='text'>$bloque</p>");
+                  $formatted = explode('.',$bloque);
+                  if(count($formatted)==2&&$formatted[1]=="png"){
+                    echo("<img src='uploads/images/".$bloque."' class ='wiki-img' alt = 'Imagen de la wiki'>");
+                  }
+                  else
+                    echo("<p class ='text'>$bloque</p>");
                 }
               }
            ?>

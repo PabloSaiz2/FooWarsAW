@@ -1,6 +1,6 @@
 <?php
   namespace es\fdi\ucm\aw;
-    class forumForm extends Form{
+    class ForumForm extends Form{
 		public function generaCamposFormulario($datosIniciales){
 			return '<form id="formulario" >
 			<section>

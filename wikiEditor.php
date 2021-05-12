@@ -16,7 +16,7 @@
         include_once('includes/reutilizables/header.php');
       ?>
       <section class="wiki" id="wiki-main">
-           <form id = "fields" action="procesos/processArticle.php?title=<?php echo($_GET['title'])?>" method="post">
+           <form id = "fields" action="procesos/processArticle.php?title=<?php echo($_GET['title'])?>" enctype = "multipart/form-data" method="post">
                 <button type="submit">Guardar</button>
                 <?php
                     use es\fdi\ucm\aw\Articulo;
@@ -32,6 +32,7 @@
                 ?>
            </form>
            <button onClick="addField()">Añadir bloque</button>
+           <button onClick="addImageField()">Añadir imagen</button>
       </section>
   </body>
 </html>
