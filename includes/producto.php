@@ -50,7 +50,7 @@
         */
         public static function show(){
             $preparedStatement=Aplicacion::getInstance()->conexionBD()->prepare("SELECT * FROM produtos");
-            $preparedStatement->bind_param("isssi");
+            // $preparedStatement->bind_param("isssi");
             $preparedStatement->execute();
             $preparedStatement->store_result();
             if($preparedStatement->num_rows>0){

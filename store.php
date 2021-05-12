@@ -65,6 +65,7 @@
     <button class="btn" onclick="filterSelection('1')"> Ropa</button>
     <button class="btn" onclick="filterSelection('2')"> Gorras</button>
     <button class="btn" onclick="filterSelection('3')"> Otros</button>
+    
     <button class="btn" style="background-color:skyblue"><a href="insert.php" style="text-decoration:none"> Añadir Producto</a></button>
   </div>
   <script type = "text/javascript" src="js/store/products.js"></script>

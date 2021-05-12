@@ -13,6 +13,9 @@
         public function getName(){
             return $this->nombre;
         }
+        public function getRol(){
+            return $this->rol;
+        }
         public static function buscarUsuario($nombreUsuario){
             $preparedStatement=Aplicacion::getInstance()->conexionBD()->prepare("SELECT usuario,password,rol_id FROM usuarios WHERE usuario=?");
             $preparedStatement->bind_param("s",$nombreUsuario);
@@ -26,6 +29,7 @@
             $preparedStatement->close();
             return false;
         }
+        
         private function compruebaPassword($password){
             $correct = false;
             if(strcmp($this->contra,$password)==0)

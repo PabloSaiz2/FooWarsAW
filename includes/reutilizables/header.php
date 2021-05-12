@@ -27,11 +27,21 @@
         <a href="store.php">Tienda</a>
         <a href="about.php">Sobre nosotros</a>
         <a href="contact.php">Contacto</a>
+        
     </nav>
     <div id = "user">
         <?php
             if(isValidSession()&&$_SESSION['login']){
+              
+                    
+                    // echo('<p class = "header-element"><a href="">'.$_SESSION['rol'].'</a></p>');
+            
+                
                 echo('<p class = "header-element"><a href="dashboard.php">'.$_SESSION['username'].'</a></p>');
+                echo('<p class = "header-element"><a href="dashboard.php">'.$_SESSION['username'].'</a></p>');
+                echo('<p class = "header-element"><a href="dashboard.php">'.$_SESSION['username'].'</a></p>');
+
+
                 echo('<p class = "header-element"><a href="includes/logout.php">Cerrar sesión</a></p>');
             }
             else{

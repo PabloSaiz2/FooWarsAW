@@ -26,7 +26,8 @@
            if($result){
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $datos['user'];
-               return "index.php";
+                $_SESSION['rol'] = $result->getRol();
+              return "index.php";
                
            }
            else{

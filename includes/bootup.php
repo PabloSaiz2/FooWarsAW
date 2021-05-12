@@ -20,5 +20,5 @@
         }
     });
     use es\fdi\ucm\aw\Aplicacion as App;
-    App::getInstance()->init(array('host'=>'localhost','bd'=>'iron','user'=>'root','pass'=>'')); 
+    App::getInstance()->init(array('host'=>'localhost','bd'=>'iron','user'=>'root','pass'=>'1234')); 
 ?>

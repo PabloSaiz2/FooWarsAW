@@ -12,10 +12,12 @@
   $foro=$m->cargarhilos($pagina);  
   $formulario = new forumForm("forumForm");
   $formularioforo =$formulario->gestiona();
+ 
   $tituloPagina = 'Baguettes of iron -Foro';
   $contenido=<<<EOF
+      
       $foro
       $formularioforo
-  EOF;
-  require_once __DIR__.'/includes/plantillas/plantillaB.php'; 
-?>
+      EOF;
+      require_once __DIR__.'/includes/plantillas/plantillaform.php'; 
+    ?>

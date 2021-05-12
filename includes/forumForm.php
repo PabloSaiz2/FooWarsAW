@@ -3,22 +3,25 @@
     class forumForm extends Form{
 		public function generaCamposFormulario($datosIniciales){
 			return '<form id="formulario" >
-			<section>
-			<div >
+			
   
-				<hr>
-				
-				<p>crea un nuevo hilo</p>
+			<fieldset>
+				<legend>Crear un nuevo hilo</legend>
+				<label for="comentario">Comentario:</label><br>
 				<input id="comentario" type = "text" name ="comentario" value=" ">
 				<br/>
+				<label for="informacion">Informacion:</label><br>
 				<input id="informacion" type = "text" name ="informacion" value="">
-				<br/>
+				<br/><br>
+
 				<input type = "submit" value="confirmar">
-			  </hr>
+
+				</fieldset>
+
+
 				
 				
-			</div>
-		</section>
+		
 		</form>';
 		}
 		public function procesaFormulario($datos){
