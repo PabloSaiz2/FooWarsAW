@@ -8,13 +8,14 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type = "text/css" href="css/master.css?v=<?php echo(rand());?>">
 <link rel="stylesheet" type = "text/css" href="css/estilo_tienda.css?v=<?php echo(rand());?>">
+<script src="https://kit.fontawesome.com/0afaf0fad2.js" crossorigin="anonymous"></script>
 <script type = "text/javascript" src="js/store/slider.js"></script>
 <title>Baguettes of Iron - Tienda</title>
 </head>
   
 <body>
   <?php
-        include_once('includes/reutilizables/header.php');
+        include_once('includes/comun/header.php');
 
         //query de extraccion de datos
         use es\fdi\ucm\aw\Producto;
@@ -66,10 +67,19 @@
     <button class="btn" onclick="filterSelection('2')"> Gorras</button>
     <button class="btn" onclick="filterSelection('3')"> Otros</button>
     
-    <button class="btn" style="background-color:skyblue"><a href="insert.php" style="text-decoration:none"> Añadir Producto</a></button>
+    <?php
+       if($_SESSION['rol']==1){
+         ?>
+          <button class="btn" style="background-color:skyblue"><a href="insert.php" style="text-decoration:none"> Añadir Producto</a></button>
+         <?php
+       }
+    ?>
   </div>
   <script type = "text/javascript" src="js/store/products.js"></script>
   <!-- Portfolio Gallery Grid -->
+  <div id="store">
+
+ 
   <div class="row">
       <div class="column 1">
           <div class="content">
@@ -127,7 +137,7 @@
         </div>
       
         <?php }?>
-      
+        </div>
       <script>
         filterSelection("all");
       </script>
