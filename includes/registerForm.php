@@ -47,7 +47,7 @@
                 Usuario::crea($datos['user'],$datos['userpass'],$datos['name'],$datos['lastname'],$datos['email'],2);
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $datos['user'];
-                $_SESSION['role']=2; 
+                $_SESSION['rol']=2; 
                 return "index.php";
               }
            }
