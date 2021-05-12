@@ -8,9 +8,22 @@
     }
     function getNumBlocks(){
         $i=0;
-        while (isset($_POST['field'.$i])) {
+        $count = 0;
+        while ($i<10) {
+            if(isset($_POST['field'.$i]))
+                ++$count;
             ++$i;
         }
-        return $i;
+        return $count;
+    }
+    function getImgBlocks(){
+        $i=0;
+        $count = 0;
+        while ($i<10) {
+            if(isset($_FILES['img'.$i]))
+                ++$count;
+            ++$i;
+        }
+        return $count;
     }
 ?>

@@ -1,6 +1,6 @@
 <?php
 	namespace es\fdi\ucm\aw;
-	class comentario{
+	class Comentario{
 		private $usuario;
 		public $contenido;
 		private $id;
