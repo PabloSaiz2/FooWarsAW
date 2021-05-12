@@ -3,18 +3,16 @@
 $tituloPagina = 'Baguettes of Iron - contacto';
 $contenido=<<<EOF
    <section>
-   
- 
- <div>
-	<div>
-	<center><h1>Contact Us!</h1><center/>
-	</div>
+ <div >
+	
+<h1>Contactanos !</h1>
+	
 </div>
 
-	<div>
-    <center><h2>En esta seccion podras escribirnos si tienes
+	<div class="subtitle-contact">
+   <h3>En esta seccion podras escribirnos si tienes
 		alguna duda o sugerencia.
-	</h2><center/>
+	</h3>
 	</div>
 
  
@@ -43,19 +41,20 @@ $contenido=<<<EOF
 </div>
 
 <style>
-div {
-  border: white 3px ;
-  margin: 10px;
-  padding: 10px;
-  background-color: lightgrey;
+
+subtitle-contact{
+
 }
-div div {
-  border: white 3px solid;
-  margin: 10px;
-  padding: 10px;
-  background-color: lightgrey;
+form{
+	padding :2vh 5vw;
+	width:40vw;
+	margin:auto;
+}
+section div h1,h3{
+	text-align: center;
 }
 </style>
+
 
 	</section>
 EOF;
