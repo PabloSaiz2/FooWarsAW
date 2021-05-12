@@ -29,14 +29,10 @@
             $preparedStatement->close();
             return false;
         }
-<<<<<<< HEAD
-        
-=======
         //Lo de la pimienta lo haria más adelante con un fichero una enviroment variable
         private static function encrypt($password_to_encrypt){
             return password_hash($password_to_encrypt."baguette",PASSWORD_BCRYPT);
         }
->>>>>>> 85a00b7323d8f3540993b27f8b0c7e1e5ddf2087
         private function compruebaPassword($password){
             $correct = false;
             if(password_verify($password."baguette",$this->contra))
