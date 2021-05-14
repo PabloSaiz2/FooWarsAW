@@ -38,10 +38,6 @@
             
                 
                 echo('<p class = "header-element"><a href="dashboard.php">'.$_SESSION['username'].'</a></p>');
-                echo('<p class = "header-element"><a href="dashboard.php">'.$_SESSION['username'].'</a></p>');
-                echo('<p class = "header-element"><a href="dashboard.php">'.$_SESSION['username'].'</a></p>');
-
-
                 echo('<p class = "header-element"><a href="includes/logout.php">Cerrar sesión</a></p>');
             }
             else{

@@ -9,12 +9,16 @@
     $title=$_POST['mapName'];
     $username = $_SESSION['username'];
     if(isset($_POST['stringMap'])&&isset($_POST['mapName'])){
-        $file = fopen("../maps/".$username.".bohmap","w");
+        $username=$username.".boimap";
+        $file = fopen("../uploads/maps/".$username,"w");
         fwrite($file,$mapData);
         fclose($file);
-        $query="INSERT INTO mapa (nombre, ruta) VALUES('$title','maps/$username.boimap')";
-        Aplicacion::getInstance()->conexionBD()->query($query);  
+        $query="INSERT INTO mapa (nombre, ruta) VALUES(?,?)";
+        $preparedStatement = Aplicacion::getInstance()->conexionBD()->prepare($query);  
+        $preparedStatement->bind_param('ss',$title,$username);
+        $preparedStatement->execute();
         header("Location: ../dashboard.php");
     }
-    header("Location: .");
+    else
+        header("Location: ../map.php");
 ?>

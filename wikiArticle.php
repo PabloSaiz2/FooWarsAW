@@ -13,7 +13,7 @@
   </head>
   <body >
     <?php
-          include_once('includes/reutilizables/header.php');
+          include_once('includes/comun/header.php');
     ?>
       <div>
       <?php
@@ -57,7 +57,7 @@
                     echo("<img src='uploads/images/".$bloque."' class ='wiki-img' alt = 'Imagen de la wiki'>");
                   }
                   else
-                    echo("<p class ='text'>$bloque</p>");
+                    echo("<p class='wiki-text'>$bloque</p>");
                 }
               }
            ?>

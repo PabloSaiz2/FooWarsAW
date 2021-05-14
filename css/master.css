@@ -3,7 +3,10 @@ body{
    
 
 }
-
+.wiki-text{
+    font-family: monospace;
+    margin-top: 20px;
+}
 #wiki-main{
     display: inline-block;
     width: 79%;

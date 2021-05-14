@@ -13,7 +13,7 @@
   </head>
   <body>
       <?php
-        include_once('includes/reutilizables/header.php');
+        include_once('includes/comun/header.php');
       ?>
       <section class="wiki" id="wiki-main">
            <form id = "fields" action="procesos/processArticle.php?title=<?php echo($_GET['title'])?>" enctype = "multipart/form-data" method="post">

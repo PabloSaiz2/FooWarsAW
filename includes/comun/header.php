@@ -19,7 +19,7 @@
                     <?php
                 if(isValidSession()&&$_SESSION['login']){
                     ?>
-                    <li><a href="">  <?php echo $_SESSION['username'].' ' ?><i class="fas fa-user"></i></a>
+                    <li><a href="dashboard.php">  <?php echo $_SESSION['username'].' ' ?><i class="fas fa-user"></i></a>
                         <ul>
                             <?php
                                 if($_SESSION['rol']==1){
