@@ -1,16 +1,17 @@
 
   .container {
     background-color: #9da19f;
-    padding: 20px 40px;
     border-radius: 5px;
     height: 60vh;
-    margin: 40px 150px ;
+    width: 60%;
+    margin: auto;  
   }
 
   .container h1 {
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 5px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding-top: 1%;
   }
   
   .container a {
@@ -18,39 +19,45 @@
     color: lightblue;
   }
   .formulario{
-    width: 45%;
+    display: flex;
+    width: 100%;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    
+    
   }
-  .formulario input,select{
-    margin-bottom: 10px;
-    width: 55%;
-    display:inline;
-    margin-left: 85%;
-    margin-right: auto;
-    text-align: center; 
-    font-size: 1em;  
+  .formulario .contenido{
+    align-items: center;
+    width: 60%;
+    margin-top: 20px; 
+    display: flex;
+    flex-direction: column;
   }
-  .contenido label{
-      margin-bottom: 2.5vh;
-    font-size: 3.5vh;
-      width:25%;
-      float:left;
-      display: block;
-      margin-left:80%;
+  .formulario label,select{
+    font-size: 1.5rem;
+    width: 50%;
   }
   
+  .formulario input{
+    font-size: 1.2rem;
+    width: 50%;
+    margin-top: 1%;
+  }
+  
+
+  
+  
   .btn {
-      margin-top: 4vh;
     cursor: pointer;
-    display: inline-block;
-    width: 100%;
-    background: lightblue;
+    background: rgb(88, 58, 23);
     padding: 15px;
     font-family: inherit;
     font-size: 16px;
     border: 0;
     border-radius: 5px;
+    margin-top: 1%;
+    width: 30% !important;
   }
   
   .btn:focus {
@@ -63,5 +70,4 @@
   
   .text {
     margin-top: 30px;
-
   }
