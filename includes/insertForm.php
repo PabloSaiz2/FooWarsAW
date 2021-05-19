@@ -5,21 +5,21 @@
     {
      
       public function generaCamposFormulario($datosIniciales){
-            return '<form>
+            return '<form class = "formularioProducto">
 
             <div class = "formulario">
 
                 <div class="contenido">
-                  <label for="name">Name:</label>
-                  <input id ="name" type="text" name = "name" placeholder = "name">
+                  <label for="name">Nombre </label>
+                  <input id ="name" type="text" name = "name" placeholder = "Introduce el nombre ">
                 </div>
             
                 <div class="contenido">
-                  <label for="description">Description:</label>
-                  <input id ="description" type="text" name = "description" placeholder = "Description">
+                  <label for="description">Descripción</label>
+                  <input id ="description" type="text" name = "description" placeholder = "Breve descripción">
                 </div>
                 <div class="contenido">
-                  <label for="type">Type:</label>
+                  <label for="type">Tipo</label>
                   <select name="select">
                     <option value="1">Ropa</option>
                     <option value="2" selected> Gorra</option>
@@ -27,10 +27,10 @@
                   </select>
                 </div>
                 <div class="contenido">
-                  <label for="image">Archivos</label>
+                  <label for="image">Cargar Imagen </label>
                   <input type="file"  id="image" name="image"  multiple>
                 </div>
-                <input class="btn" type="submit" value="Insert"></button>
+                <input class="btn" type="submit" value="Añadir"></button>
             </div>
         </form>';
         }

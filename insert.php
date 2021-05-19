@@ -16,7 +16,7 @@
         include_once('includes/comun/header.php');
       ?>
       <div class="container">
-          <h1>Insert</h1>
+          <h1>Añadir Producto</h1>
                 <?php
                   use  es\fdi\ucm\aw\InsertForm;
                   $formulario = new InsertForm("insertForm");

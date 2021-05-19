@@ -342,3 +342,64 @@ ul, ol {
     from {opacity: .4}
     to {opacity: 1}
   }
+  .container-admin{
+      width: 65%;
+        margin: auto;
+    }
+  .container-admin .row {
+    /* margin-left: auto; */
+    margin: auto;
+    display: inline-flex;
+    /* width: 100%; */
+
+  }
+  .container-admin .col-s6{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+  }
+  .container-admin .col-s5{
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    
+    
+  }
+  .container-admin .card{
+    position: relative;
+    margin: 0.5rem 1rem 0;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+  .container-admin .card .card-title{
+    font-size: 24px;
+    font-weight: 300;
+  }
+  .container-admin .fas{
+    font-size: 8rem;
+    color: rgb(87, 85, 83) !important;
+  }
+  .container-admin h5{
+    margin: 0.82rem 0 0.656rem 0;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: rgb(88, 58, 23) !important;
+    
+  }
+  .container-admin a{
+     text-decoration: none;
+  }
+  .container-admin a:hover{
+     text-decoration: none;
+     position : relative;
+     border : 2px solid white;
+     background : #34475E;
+     
+     transition : .3s;
+     transform : rotate(20deg);
+     opacity : .8;
+     margin-left :0px;
+    background-color : #ccc9c8;
+  }
