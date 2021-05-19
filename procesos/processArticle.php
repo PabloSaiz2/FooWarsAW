@@ -23,11 +23,11 @@
                         $type = $finfo->file($fichero['tmp_name']);
                         if($type=="image/png"){
                             $date = new DateTime("now",new DateTimeZone("Europe/Madrid"));
-                            $nombreFinal = $date->format("Y-m-d H i s").".png";
+                            $nombreFinal = $date->format("Y m d H i s").".png";
                             $fichero_subido = $UPLOAD_DIR."\images\ ".$nombreFinal;
                             
                             if(move_uploaded_file($fichero['tmp_name'],$fichero_subido)){
-                                array_push($bloques,$nombreFinal);
+                                array_push($bloques," ".$nombreFinal);
                             }
                             else{
                                 throw new UploadException("Error subiendo una de las fotos");
