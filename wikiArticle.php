@@ -39,4 +39,7 @@
                     }
                     $contenido.="</section>";
     }
+    else{
+     header("Location: ./wiki.php");
+    }
     require_once __DIR__.'/includes/plantillas/plantillaB.php'; 
