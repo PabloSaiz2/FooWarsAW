@@ -182,7 +182,7 @@ INSERT INTO `tipo` (`id`, `nombre`) VALUES
 CREATE TABLE `usuarios` (
   `id` int(10) NOT NULL,
   `usuario` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `correo` varchar(50) DEFAULT NULL,
