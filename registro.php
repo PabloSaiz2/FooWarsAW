@@ -14,7 +14,7 @@
   </head>
   <body>
       <?php
-        include_once('includes/reutilizables/header.php');
+        include_once('includes/comun/header.php');
       ?>
       <div class="container">
           <h1>Registro</h1>
