@@ -2,7 +2,7 @@
     $host="localhost";
     $user="root";
     $bd="iron";
-    $contraseña="";
+    $contraseña="1234";
 
     $conexion=new mysqli($host,$user,$contraseña,$bd);
 /*

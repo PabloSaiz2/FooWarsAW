@@ -1,6 +1,6 @@
 <?php
   namespace es\fdi\ucm\aw;
-    class RegisterForm extends Form
+    class AdminModifyForm extends Form
     {
       public function generaCamposFormulario($datosIniciales){
         return '<form id="formulario" >
@@ -17,15 +17,13 @@
             <input id ="lastname" type="text" name = "lastname" placeholder = "apellido" required>
             
             <input id ="email" type="email" name = "email" placeholder = "correo@ucm.es" required>
-            
-            <!-- esto es para la vidta de administrador -->
-            <!-- <label for="rol">Rol:</label>
-                <select name="rol" id="rol">
-                    <option value="user">User</option>
+            <select name="rol" id="rol">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
 
-                </select> -->
-              
-                <input id="formRegisterSubmit" class="btn" type="submit" value="Registrarse"></button>
+            </select> 
+            
+            <input id="formRegisterSubmit" class="btn" type="submit" value="Modificar"></button>
         </div>
     </form>';
     }

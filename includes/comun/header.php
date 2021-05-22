@@ -24,11 +24,13 @@
                             <?php
                                 if($_SESSION['rol']==1){
                                 ?>
-                                    <li><a class="text-center" href=""><i class="fas fa-users-cog "></i></a>
-                                        <ul>
-                                            <li><a href="insert.php">Añadir Producto</a></li>
-                                            <li><a href="">Modificar Usuario</a></li>
-                                        </ul>
+                                    <!-- <li><a class="text-center" href="dashboard.php"> <i class="fas fa-terminal"></i> Admin</a>
+                                    <li><a class="text-center" href="dashboard.php"> <i class="fas fa-eye"></i> Admin</a> -->
+                                    <li><a class="text-center" href="dashboard.php"> <i class="fas fa-desktop"></i> Admin</a>
+                                        <!-- <ul>
+                                            <li><a href="dashboard.php">Admin</a></li>
+                                           
+                                        </ul> -->
                                     </li>
                                 <?php
                                 }

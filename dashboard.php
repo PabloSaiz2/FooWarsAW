@@ -17,7 +17,7 @@
                               </div>
 
                               <div class="row">
-                                    <a href="#!">
+                                    <a href="adminAddUser.php">
                                           <div style="padding: 30px;" class="col-s5 ">
                                                 <i class="fas fa-user-plus"></i>
                                                 <span ><h5>Añadir</h5></span>
@@ -26,7 +26,7 @@
                                     <div class="col s1">&nbsp;</div>
                                     <div class="col s1">&nbsp;</div>
 
-                                    <a href="#!">
+                                    <a href="adminModifyUser.php">
                                           <div style="padding: 30px;" class="col-s5">
                                                 <i class="fas fa-user-cog" ></i>      
                                                 <span ><h5>Modificar </h5></span>

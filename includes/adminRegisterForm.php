@@ -1,6 +1,6 @@
 <?php
   namespace es\fdi\ucm\aw;
-    class RegisterForm extends Form
+    class AdminRegisterForm extends Form
     {
       public function generaCamposFormulario($datosIniciales){
         return '<form id="formulario" >
@@ -17,15 +17,14 @@
             <input id ="lastname" type="text" name = "lastname" placeholder = "apellido" required>
             
             <input id ="email" type="email" name = "email" placeholder = "correo@ucm.es" required>
-            
-            <!-- esto es para la vidta de administrador -->
-            <!-- <label for="rol">Rol:</label>
+          
+            <label for="rol">Rol:</label>
                 <select name="rol" id="rol">
-                    <option value="user">User</option>
-
-                </select> -->
+                  <option value="1">Admin</option>
+                  <option value="2">User</option>
+                </select> 
               
-                <input id="formRegisterSubmit" class="btn" type="submit" value="Registrarse"></button>
+            <input id="formRegisterSubmit" class="btn" type="submit" value="Añadir"></button>
         </div>
     </form>';
     }
@@ -44,12 +43,12 @@
               if(strlen($datos['userpass'])<5)
                 return array("Contraseña muy corta");
               else{
-                Usuario::crea($datos['user'],$datos['userpass'],$datos['name'],$datos['lastname'],$datos['email'],2);
+                Usuario::crea($datos['user'],$datos['userpass'],$datos['name'],$datos['lastname'],$datos['email'],$datos['rol']);
                 $created = Usuario::buscarUsuario($datos['user']);
                 if($created){
                   $_SESSION['login'] = true;
                   $_SESSION['username'] = $datos['user'];
-                  $_SESSION['rol']=2; 
+                  $_SESSION['rol']=$datos['rol']; 
                   return "index.php";
                 }
                 else
