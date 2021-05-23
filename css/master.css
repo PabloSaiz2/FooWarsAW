@@ -234,7 +234,31 @@ ul, ol {
     width: 5%;
     height: auto;
 }
+.hilo{
+    background-color: rgb(144, 181, 187);
+    border: rgba(53, 111, 158, 0.829) solid thin;
+    padding: 2%;
+}
+#informacion{
+    font-size: small;
+    color: rgb(43, 25, 145);
+}
+.hilo a{
+    color: #3287cc;
+}
+.comentario{
+    border: rgba(4, 23, 37, 0.068) solid thin;
+    padding: 2%;
+}
+#creador{
+    text-align: right;
+    color: saddlebrown;
 
+}
+#fecha{
+    text-align: right;
+    color: saddlebrown;
+}
 
 .slideshow-container {
     max-width: 50vw;
