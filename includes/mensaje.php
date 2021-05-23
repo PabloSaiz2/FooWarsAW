@@ -25,8 +25,12 @@
 			while($hilo=$comentarios->fetch_assoc()){
 				$id1= $hilo['id'];
 				$title=$hilo['titulo'];
+				$info =$hilo['mensaje'];
 				$retur.=<<<EOS
+				<div class ='hilo'>
 				<a href = ' discussion.php?id= $id1 '> $title </a><br>
+				<h5 id='informacion'>$info</h5></br>
+				</div>
 				EOS;
 			}
 			return $retur;

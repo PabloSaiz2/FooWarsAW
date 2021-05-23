@@ -39,12 +39,26 @@
 			$mensaje;
 			$retur=''; 
 			while($mensaje = $comentarios->fetch_assoc()){
+				$if=$mensaje['id_usuario'];
+				$ids=self::getnombrecreador($if);
+				$fecha =$mensaje['fecha'];
 				$intento=$mensaje['comentario'];
 				$retur.=<<<EOS
-				<p> $intento </p></br>
+				<div class='comentario'>
+				<p> $intento </p>
+				<p id='creador'>autor:$ids</p>
+				<p id='fecha'>$fecha<p></br>
+				</div>
 				EOS;
 			}
 			return $retur;
+		}
+		function getnombrecreador($id){
+			$busca = "SELECT usuario FROM usuarios WHERE id = '$id' ";
+			$conexion=Aplicacion::getInstance()->conexionBD()->query($busca);
+			$ids =$conexion->fetch_assoc();
+			$ret = $ids['usuario'];
+			return $ret;
 		}
 	}
 ?>
