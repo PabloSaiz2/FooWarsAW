@@ -36,22 +36,7 @@
 		function cargacomentario($padre){
 			$busqueda = "SELECT * FROM comentarios WHERE id_hilo = '$padre' ";
 			$comentarios = Aplicacion::getInstance()->conexionBD()->query($busqueda);
-			$mensaje;
-			$retur=''; 
-			while($mensaje = $comentarios->fetch_assoc()){
-				$if=$mensaje['id_usuario'];
-				$ids=self::getnombrecreador($if);
-				$fecha =$mensaje['fecha'];
-				$intento=$mensaje['comentario'];
-				$retur.=<<<EOS
-				<div class='comentario'>
-				<p> $intento </p>
-				<p id='creador'>autor:$ids</p>
-				<p id='fecha'>$fecha<p></br>
-				</div>
-				EOS;
-			}
-			return $retur;
+			return $comentarios;
 		}
 		function getnombrecreador($id){
 			$busca = "SELECT usuario FROM usuarios WHERE id = '$id' ";

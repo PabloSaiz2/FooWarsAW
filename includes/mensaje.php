@@ -21,19 +21,7 @@
   			$numero_final =5*($numero);
   			$busca = "SELECT * FROM hilos WHERE id BETWEEN  '$numero_inicial' AND '$numero_final' ";
   			$comentarios = Aplicacion::getInstance()->conexionBD()->query($busca);
-			$retur ='<h1>hilos<h1>';
-			while($hilo=$comentarios->fetch_assoc()){
-				$id1= $hilo['id'];
-				$title=$hilo['titulo'];
-				$info =$hilo['mensaje'];
-				$retur.=<<<EOS
-				<div class ='hilo'>
-				<a href = ' discussion.php?id= $id1 '> $title </a><br>
-				<h5 id='informacion'>$info</h5></br>
-				</div>
-				EOS;
-			}
-			return $retur;
+			return $comentarios;
 		}
 		function insertMensaje($date){
 			$inserta ="INSERT INTO hilos (titulo,fecha,mensaje,id_U) VALUES ('$this->informacion','$date','$this->mensaje','$this->creador')";
