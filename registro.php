@@ -1,28 +1,15 @@
 <?php
     require_once('includes/bootup.php');
     require_once('includes/validation.php');
-?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="css/master.css?v=<?php echo(rand());?>">
-    <link rel="stylesheet" type = "text/css" href="css/color.css?v=<?php echo(rand());?>">
-    
-    
-    <title>Baguettes of Iron - Login</title>
-  </head>
-  <body>
-      <?php
-        include_once('includes/comun/header.php');
-      ?>
+    use es\fdi\ucm\aw\registerForm;
+    $formulario = new RegisterForm("registerForm");
+    $form=$formulario->gestiona();
+    $tituloPagina="Baguettes of iron-registro";
+    $contenido=<<<EOF
       <div class="container">
           <h1>Registro</h1>
-            <?php
-                use es\fdi\ucm\aw\RegisterForm;
-                $formulario = new RegisterForm("registerForm");
-                $formulario->gestiona();
-            ?>
-        </div>
-  </body>
-</html>
+           $form
+      EOF;
+      require_once __DIR__.'/includes/plantillas/plantillaform.php'; 
+          
+    ?>
