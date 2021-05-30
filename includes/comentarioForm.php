@@ -13,7 +13,7 @@
             <hr>
             <p>escribe un comentario</p>
             <input id="comentario" type="text" name="comentario" value=""><br/>
-            <input id="hilopadre" name="padre" value=$this->hilo>
+            <input id="hilopadre" type="hidden" name="padre" value=$this->hilo>
             <br/>
             <input type ="submit" value="confirmar">
             </hr>
