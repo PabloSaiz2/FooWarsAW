@@ -21,5 +21,5 @@
     });
     $UPLOAD_DIR = dirname(__DIR__,1)."\uploads";
     use es\fdi\ucm\aw\Aplicacion as App;
-    App::getInstance()->init(array('host'=>'localhost','bd'=>'iron','user'=>'root','pass'=>'1234')); 
+    App::getInstance()->init(array('host'=>'localhost','bd'=>'iron','user'=>'iron','pass'=>'iron')); 
 ?>
