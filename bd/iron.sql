@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2021 a las 11:31:09
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Servidor: vm17.db.swarm.test
+-- Tiempo de generación: 01-06-2021 a las 08:31:02
+-- Versión del servidor: 10.5.9-MariaDB-1:10.5.9+maria~focal
+-- Versión de PHP: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,14 +57,19 @@ CREATE TABLE `bloques` (
 --
 
 INSERT INTO `bloques` (`id_hijo`, `id_padre`, `contenido`) VALUES
-(316, 2, 'Texto para rellenar'),
-(317, 2, 'El combate'),
-(318, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '),
-(319, 2, ' 2021 05 20 11 17 05.png'),
-(320, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '),
-(405, 3, 'La industria'),
-(406, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '),
-(407, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ');
+(264, 3, 'La industria. Este sector económico bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla'),
+(265, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '),
+(266, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '),
+(267, 3, ' 2021 05 20 21 46 17.png'),
+(268, 3, 'aaaaaa'),
+(269, 3, 'prueba'),
+(442, 2, 'Texto para rellenar'),
+(443, 2, 'El combate'),
+(444, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '),
+(445, 2, ' 2021 05 20 11 17 05.png'),
+(446, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '),
+(447, 2, 'Un poco más de texto'),
+(448, 2, ' 2021 05 20 13 26 04.png');
 
 -- --------------------------------------------------------
 
@@ -85,7 +90,8 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id`, `comentario`, `fecha`, `id_usuario`, `id_hilo`) VALUES
-(1, 'Tengo un bug', '2021-05-20', 14, 2);
+(1, 'Tengo un bug', '2021-05-20', 14, 2),
+(2, 'este es un comentario de prueba', '2021-05-31', 22, 2);
 
 -- --------------------------------------------------------
 
@@ -107,7 +113,11 @@ CREATE TABLE `hilos` (
 
 INSERT INTO `hilos` (`id`, `titulo`, `fecha`, `mensaje`, `id_U`) VALUES
 (1, ' ', '2021-05-20', '', 14),
-(2, 'Hola tengo un bug', '2021-05-20', 'Bugs', 14);
+(2, 'Hola tengo un bug', '2021-05-20', 'Bugs', 14),
+(3, ' prueba 2', '2021-05-22', 'proof', 15),
+(4, ' Opinion', '2021-05-30', 'resumire mis opiniones', 20),
+(5, ' prueba  de hilo ', '2021-05-31', 'resumire mis opiniones', 22),
+(6, ' prueba  de hilo ', '2021-05-31', 'proof', 22);
 
 -- --------------------------------------------------------
 
@@ -126,7 +136,9 @@ CREATE TABLE `mapa` (
 --
 
 INSERT INTO `mapa` (`id`, `nombre`, `ruta`) VALUES
-(1, 'Mapete', 'Ambrosiete.boimap');
+(1, 'Mapete', 'Ambrosiete.boimap'),
+(2, 'Mapita', 'Pepe.boimap'),
+(3, 'capo', 'kingdra.boimap');
 
 -- --------------------------------------------------------
 
@@ -141,6 +153,14 @@ CREATE TABLE `produtos` (
   `imagen` varchar(100) NOT NULL,
   `id_tipo` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nombre`, `descripcion`, `imagen`, `id_tipo`) VALUES
+(1, 'tarjeta', 'tarjeta de puntos', 'img/tarteja.png', 3),
+(2, 'camiseta', 'es una camisa azul', 'img/camisa.png', 1);
 
 -- --------------------------------------------------------
 
@@ -198,7 +218,13 @@ INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `apellidos`, `cor
 (9, 'chamako', '', '', '', '', 2),
 (10, 'luis', '12345', 'luis11', 'montenegro', 'lmontene@ucm.es', 2),
 (13, 'luis1', 'floriluz11', 'luis1', 'luis1', 'luis1@sd', 2),
-(14, 'Ambrosiete', '$2y$10$tMLSpqBv2S2nzWLUFdV.K.gP/n3D9Z.OY1V77ZzRBpk', 'Ambrosio', 'Pérez', 'ambrosio@gmail.com', 2);
+(14, 'Ambrosiete', '$2y$10$tMLSpqBv2S2nzWLUFdV.K.gP/n3D9Z.OY1V77ZzRBpk', 'Ambrosio', 'Pérez', 'ambrosio@gmail.com', 2),
+(15, 'Pepe', '$2y$10$NbDWl/5Wj1/Y2ijhoYfrIeTN4xqeI6woSxdbCAnjW53X9hNyMQt0.', 'Pepe', 'Pérez', 'pepe@ucm.com', 2),
+(16, 'astarol', '$2y$10$kvbJmv4MR7hOGXGPmCqhneEolguJ8vgDeEhoQrx/Qh61.e75UyV6W', 'astral ', 'aster', 'a@ucm.es', 2),
+(18, 'carlosmario', '$2y$10$jAgAsZSNKHsOO3QSlkGJte/f8ejQUkd7c.nJqEvXH3P56KBFJ4ogO', 'charles', 'martinez', 'q@ucm.es', 2),
+(19, 'camus', '$2y$10$3jcM/7HGPqRbyBNomDbY5eAWTmSEw7ZqBaTU6AqwY4qdbi559lrgO', 'camposanto ', 'grus', 'b@ucm.es', 2),
+(20, 'MAcaco', '$2y$10$xshp8ee.n2aRCT57uajrrOmeH4riqgRwaO6/1r9s2aHTR5wKJRGyK', 'camaaa', 'aster', 'rafaelhatercillo@gmail.com', 1),
+(22, 'kingdra', '$2y$10$UgYSASOPS6AKct.M9b8SSeOYd12UZUKis9Yxr.b0iBqd1Ci6XnxWC', 'astral ', 'marquez', 'a@gmail.com', 2);
 
 -- --------------------------------------------------------
 
@@ -304,31 +330,31 @@ ALTER TABLE `articulos`
 -- AUTO_INCREMENT de la tabla `bloques`
 --
 ALTER TABLE `bloques`
-  MODIFY `id_hijo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=408;
+  MODIFY `id_hijo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=473;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `hilos`
 --
 ALTER TABLE `hilos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `mapa`
 --
 ALTER TABLE `mapa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -346,7 +372,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
