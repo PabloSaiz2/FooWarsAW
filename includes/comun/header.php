@@ -37,7 +37,7 @@
                             ?>
                             
     
-    
+    						<li><a href="map.php">Mapa</a></li>
                             <li><a href="includes/logout.php"> Cerrar Sesion</a></li>
                         </ul>
                     </li>
