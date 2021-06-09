@@ -17,7 +17,7 @@
         $preparedStatement = Aplicacion::getInstance()->conexionBD()->prepare($query);  
         $preparedStatement->bind_param('ss',$title,$username);
         $preparedStatement->execute();
-        header("Location: ../dashboard.php");
+        header("Location: ../index.php");
     }
     else
         header("Location: ../map.php");
